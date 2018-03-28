@@ -68,6 +68,17 @@ class GameScene: SKScene {
         act1.position = CGPoint(x:self.frame.midX+250, y:self.frame.midY-150)
         
     }
+    
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+        
+    }
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+        button1.texture=SKTexture(imageNamed: "button1.png")
+        button2.texture=SKTexture(imageNamed: "button1.png")
+    }
+    
     /* 點下去的觸發事件 */
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         
