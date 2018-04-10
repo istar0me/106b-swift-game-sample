@@ -54,7 +54,9 @@ class GameScene: SKScene {
                 case 4:
                     card1.zRotation = 0.5 // 旋轉
                 case 5:
-                    card1.physicsBody = SKPhysicsBody(circleOfRadius: card1.size.height / 2.75) // 加上物理效果
+                 //   card1.physicsBody = SKPhysicsBody(circleOfRadius: card1.size.height / 2.75)
+                    
+                    card1.zPosition = 1 // 深度
                 case 6:
                     card1.color =  SKColor.red; // 顏色
                     card1.colorBlendFactor = 1;
@@ -64,6 +66,47 @@ class GameScene: SKScene {
                 default:
                     card1.zPosition = 1 // 深度
                 }
+
+                
+                switch i{
+                case 0:
+                    card1.zPosition = 0
+                case 1:
+                    card1.alpha = 0.5
+                    let action1 = SKAction.fadeAlpha(to: 1, duration: 2) // 透明度動畫
+                    card1.run(action1, withKey: "action1")
+                case 2:
+                    card1.xScale = 0.5
+                    let action1 = SKAction.scaleX(to: 1, duration: 2) // 改變寬度動畫
+                    card1.run(action1, withKey: "action1")
+                case 3:
+                    card1.yScale = 0.5
+                    let action1 = SKAction.scaleY(to: 1, duration: 2) // 改變高度動畫
+                    card1.run(action1, withKey: "action1")
+                case 4:
+                    card1.zRotation = 0.5
+                    let action1 = SKAction.rotate(toAngle: 0, duration: 2) // 旋轉動畫
+                    card1.run(action1, withKey: "action1")
+                    
+                case 5:
+                    card1.position.y=card1.position.y-100
+                    let action1 = SKAction.move(by: CGVector(dx: 0, dy: 100), duration: 2) // 位置動畫
+                    card1.run(action1, withKey: "action1")
+                case 6:
+                    card1.color =  SKColor.red;
+                    card1.colorBlendFactor = 1;
+                    let action1 = SKAction.colorize(with: UIColor(red: 1, green: 1, blue: 1, alpha: 1) , colorBlendFactor: 1, duration: 2) // 顏色動畫
+                    card1.run(action1, withKey: "action1")
+                case 7:
+                    card1.color = UIColor(red: 0, green: 0, blue: 0.5, alpha: 0.5)
+                    card1.colorBlendFactor = 1;
+                    let action1 = SKAction.colorize(with: UIColor(red: 1, green: 1, blue: 1, alpha: 1) , colorBlendFactor: 1, duration: 2) // 顏色動畫
+                    card1.run(action1, withKey: "action1")
+                default:
+                    card1.zPosition = 1
+                }
+
+                
                 i += 1
             }
        }
