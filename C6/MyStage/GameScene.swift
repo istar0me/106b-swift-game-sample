@@ -112,33 +112,13 @@ class GameScene: SKScene {
        }
     }
 
-	// 點選按下的觸控反應
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
-        if let touch = touches.first {
-        let location: CGPoint = touch.location(in: self)
-        touchedNode=atPoint(location)
-        touchedNode.zPosition = 15
-        let liftUp = SKAction.scale(to: 1.2, duration: 0.2)
-        touchedNode.run(liftUp, withKey: "pickup")
-        }
-    }
-
-	// 移動的反應
+    // 移動的反應
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?){
         if let touch = touches.first {
         let location: CGPoint = touch.location(in: self)
+        touchedNode = atPoint(location)
         touchedNode.position = touch.location(in: self)
         myLabel.text="x=\(location.x),y=\(location.y)"
-        }
-    }
-
-    // 點選放開的觸控反應
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?){
-         if let touch = touches.first {
-        let location: CGPoint = touch.location(in: self)
-        touchedNode.zPosition = 0
-        let dropDown = SKAction.scale(to: 1.0, duration: 0.2)
-        touchedNode.run(dropDown, withKey: "drop")
         }
     }
    
