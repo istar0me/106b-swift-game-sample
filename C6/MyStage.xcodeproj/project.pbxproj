@@ -15,6 +15,10 @@
 		D39F11861A8EA81D0046B7E0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D39F11851A8EA81D0046B7E0 /* Images.xcassets */; };
 		D39F11891A8EA81D0046B7E0 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D39F11871A8EA81D0046B7E0 /* LaunchScreen.xib */; };
 		D39F11951A8EA81D0046B7E0 /* MyStageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39F11941A8EA81D0046B7E0 /* MyStageTests.swift */; };
+		D39F119F1A8EA8620046B7E0 /* card1.png in Resources */ = {isa = PBXBuildFile; fileRef = D39F119E1A8EA8620046B7E0 /* card1.png */; };
+		D39F11A11A8EA86A0046B7E0 /* card2.png in Resources */ = {isa = PBXBuildFile; fileRef = D39F11A01A8EA86A0046B7E0 /* card2.png */; };
+		D39F11A31A8EA8710046B7E0 /* card3.png in Resources */ = {isa = PBXBuildFile; fileRef = D39F11A21A8EA8710046B7E0 /* card3.png */; };
+		D39F11A51A8EA8780046B7E0 /* game2bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D39F11A41A8EA8780046B7E0 /* game2bg.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +44,10 @@
 		D39F118E1A8EA81D0046B7E0 /* MyStageTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyStageTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D39F11931A8EA81D0046B7E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D39F11941A8EA81D0046B7E0 /* MyStageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyStageTests.swift; sourceTree = "<group>"; };
+		D39F119E1A8EA8620046B7E0 /* card1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = card1.png; sourceTree = "<group>"; };
+		D39F11A01A8EA86A0046B7E0 /* card2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = card2.png; sourceTree = "<group>"; };
+		D39F11A21A8EA8710046B7E0 /* card3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = card3.png; sourceTree = "<group>"; };
+		D39F11A41A8EA8780046B7E0 /* game2bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = game2bg.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +89,10 @@
 		D39F11771A8EA81D0046B7E0 /* MyStage */ = {
 			isa = PBXGroup;
 			children = (
+				D39F11A41A8EA8780046B7E0 /* game2bg.jpg */,
+				D39F11A21A8EA8710046B7E0 /* card3.png */,
+				D39F11A01A8EA86A0046B7E0 /* card2.png */,
+				D39F119E1A8EA8620046B7E0 /* card1.png */,
 				D39F117A1A8EA81D0046B7E0 /* AppDelegate.swift */,
 				D39F117C1A8EA81D0046B7E0 /* GameScene.sks */,
 				D39F117E1A8EA81D0046B7E0 /* GameScene.swift */,
@@ -201,10 +213,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D39F11A31A8EA8710046B7E0 /* card3.png in Resources */,
 				D39F11891A8EA81D0046B7E0 /* LaunchScreen.xib in Resources */,
 				D39F11861A8EA81D0046B7E0 /* Images.xcassets in Resources */,
 				D39F117D1A8EA81D0046B7E0 /* GameScene.sks in Resources */,
+				D39F119F1A8EA8620046B7E0 /* card1.png in Resources */,
+				D39F11A11A8EA86A0046B7E0 /* card2.png in Resources */,
 				D39F11841A8EA81D0046B7E0 /* Main.storyboard in Resources */,
+				D39F11A51A8EA8780046B7E0 /* game2bg.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
