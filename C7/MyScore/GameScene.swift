@@ -128,13 +128,13 @@ class GameScene: SKScene {
             let balloonWave = SKAction.follow(balloonPath.cgPath, asOffset: false, orientToPath: true, duration: 10)
             touchedNode.run(balloonWave)
             
-        }else if touchedNode.name == "button2" {
-            touchedNode.zPosition = 15
-            let wait = SKAction.wait(forDuration: 0.5)
-            let action2 = SKAction.scale(by: 2, duration: 0.5)
-            let Sequence = SKAction.sequence([action2,wait,action2,wait,action2])
-            touchedNode.run(Sequence)
-        }
+        }	else if touchedNode.name == "button2" {
+		        touchedNode.zPosition = 15
+		        let wait = SKAction.wait(forDuration: 0.5)
+		        let action2 = SKAction.scale(by: 2, duration: 0.5)
+		        let Sequence = SKAction.sequence([action2,wait,action2,wait,action2])
+		        touchedNode.run(Sequence)
+        		}
         }
     }
    
