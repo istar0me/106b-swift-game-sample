@@ -55,27 +55,58 @@ class GameScene: SKScene {
         place.zPosition = 3
         self.addChild(place)
         place.position = CGPoint(x:self.frame.midX, y:self.frame.midY+35);
-		
+        
+        // a. place 動畫（重複放大縮小）
+        let actionD1 = SKAction.scale(to: 1.1, duration:5)
+        let actionD2 = SKAction.scale(to: 1, duration:5)
+        
+        let actionD3 = SKAction.sequence([actionD1,actionD2])
+        let actionD4 = SKAction.repeatForever(actionD3)
+        place.run(actionD3)
+        
         
         // 7. cloud 圖片
         let cloud = SKSpriteNode(imageNamed: "cloud.png")
         cloud.zPosition = 1
         self.addChild(cloud)
         cloud.position = CGPoint(x:self.frame.midX, y:self.frame.midY+200);
-		
+        
+		// b. cloud 動畫（雲朵分別淡入淡出 10 次）
+        let actionC1 = SKAction.colorize(with: UIColor(red: 1, green: 1, blue: 1, alpha: 0) , colorBlendFactor: 1, duration: 2)
+        let actionC2 = SKAction.colorize(with: UIColor(red: 1, green: 1, blue: 1, alpha: 1) , colorBlendFactor: 1, duration: 2)
+        
+        let actionC3 = SKAction.sequence([actionC1,actionC2])
+        let actionC4 = SKAction.repeat(actionC3,count:10)
+        cloud.run(actionC4)
+        
         
         // 8. score 圖片
         let scorebg = SKSpriteNode(imageNamed: "scorebg.png")
         scorebg.zPosition = 2
         self.addChild(scorebg)
-        scorebg.position = CGPoint(x:self.frame.midX, y:self.frame.midY+256);
+        scorebg.position = CGPoint(x:0, y:self.frame.midY+256);
 		
+		// c. score 動畫（從左上方移動至上方，且再放大縮小）
+        let newPosition2 =  CGPoint(x:self.frame.midX, y:self.frame.midY+256);
+        let action1 = SKAction.move(to: newPosition2, duration:1)
+        let action2 = SKAction.scale(to: 1.9, duration:1)
+        let action3 = SKAction.scale(to: 1, duration:1)
+        let scaleSequence = SKAction.sequence([action1,action2,action3])
+        scorebg.run(scaleSequence)
+        
         
         // 9. bear1 圖片
         let bear1 = SKSpriteNode(imageNamed: "bear1.png")
         bear1.zPosition = 1
         self.addChild(bear1)
-        bear1.position =  CGPoint(x:self.frame.midX-320, y:self.frame.midY-200); 
+        bear1.position = CGPoint(x:self.frame.midX-300, y:self.frame.midY-300);
+        
+		// d. bear1 動畫（移動並縮放）
+        let newPosition =  CGPoint(x:self.frame.midX-320, y:self.frame.midY-200);
+        let actionb1 = SKAction.move(to: newPosition, duration:2)
+        let actionb2 = SKAction.scale(to: 1.9, duration:2)
+        let actionb3 = SKAction.group([actionb1,actionb2])
+        bear1.run(actionb3)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
