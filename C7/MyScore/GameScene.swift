@@ -39,6 +39,7 @@ class GameScene: SKScene {
 		// 4. button1 圖片
         let button1 = SKSpriteNode(imageNamed: "button1.png")
         button1.zPosition = 3
+        button1.name="button1"
         self.addChild(button1)
         button1.position = CGPoint(x:self.frame.midX-70, y:self.frame.midY-220);
         
@@ -46,6 +47,7 @@ class GameScene: SKScene {
 		// 5. button2 圖片
         let button2 = SKSpriteNode(imageNamed: "button2.png")
         button2.zPosition = 3
+        button2.name="button2"
         self.addChild(button2)
         button2.position = CGPoint(x:self.frame.midX+70, y:self.frame.midY-220);
         
@@ -61,7 +63,7 @@ class GameScene: SKScene {
         let actionD2 = SKAction.scale(to: 1, duration:5)
         
         let actionD3 = SKAction.sequence([actionD1,actionD2])
-        let actionD4 = SKAction.repeatForever(actionD3)
+       // let actionD4 = SKAction.repeatForever(actionD3)
         place.run(actionD3)
         
         
@@ -110,6 +112,30 @@ class GameScene: SKScene {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
+        if let touch = touches.first {
+        let location: CGPoint = touch.location(in: self)
+        let touchedNode=atPoint(location)
+        if touchedNode.name == "button1" {
+            touchedNode.zPosition = 15
+            let Range:CGFloat = 80.0
+            let balloonPath = UIBezierPath()
+            balloonPath.move(to: location)
+            balloonPath.addLine(to: CGPoint(x: Range,y: Range))
+            balloonPath.addLine(to: CGPoint(x: self.size.width-Range,y: Range))
+            balloonPath.addLine(to: CGPoint(x: self.size.width-Range,y: self.size.height-Range))
+            balloonPath.addLine(to: CGPoint(x: Range,y: self.size.height-Range))
+            balloonPath.addLine(to: CGPoint(x: Range,y: Range))
+            let balloonWave = SKAction.follow(balloonPath.cgPath, asOffset: false, orientToPath: true, duration: 10)
+            touchedNode.run(balloonWave)
+            
+        }else if touchedNode.name == "button2" {
+            touchedNode.zPosition = 15
+            let wait = SKAction.wait(forDuration: 0.5)
+            let action2 = SKAction.scale(by: 2, duration: 0.5)
+            let Sequence = SKAction.sequence([action2,wait,action2,wait,action2])
+            touchedNode.run(Sequence)
+        }
+        }
     }
    
     override func update(_ currentTime: TimeInterval) {
