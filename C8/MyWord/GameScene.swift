@@ -55,12 +55,21 @@ class GameScene: SKScene {
         let t_len=string1.count
         var tChars = Array(string1)
         for i:Int in 0 ..< t_len {
-            let index:Int = Int(arc4random_uniform(UInt32(t_len)))
-            let firstChar:Character=tChars[index]
-            var Str1:String="";
+            var firstChar:Character
+            var t_working:Bool = false;
+            repeat{
+                let index:Int = Int(arc4random_uniform(UInt32(t_len)))
+                firstChar = tChars[index]
+                if firstChar=="#" {
+                }else{
+                    tChars[index]="#"
+                    t_working=true
+                }
+            }while t_working==false
+            
             let x1=100+i*120
             let y1=200
-            Str1=String(firstChar)
+            let Str1:String=String(firstChar)
             showWord(Str1,x1:x1,y1:y1)
         }
     }
