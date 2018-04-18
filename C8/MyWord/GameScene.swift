@@ -52,11 +52,35 @@ class GameScene: SKScene {
     
     
     func showWords(_ string1: String) {
-        
+        let t_len=string1.count
+        for i:Int in 0 ..< t_len {
+            let firstChar = Array(string1)[i]
+            showWord(firstChar)
+            break
+        }
     }
     
     func showWord(_ string1: Character) {
+        let x1=200
+        let y1=200
         
+        // 5. 英文字母後的方塊
+        let button2 = SKSpriteNode(imageNamed: "button2.png")
+        button2.zPosition = 1
+        self.addChild(button2)
+        button2.position = CGPoint(x:x1, y:y1);
+        
+		
+        // 6. 英文字母
+        let myLabel4 = SKLabelNode(fontNamed:"AmericanTypewriter-Bold")
+        
+        myLabel4.zPosition=2
+        myLabel4.text = "A";
+        myLabel4.fontSize = 50;
+        myLabel4.fontColor=UIColor(red: 255/255, green: 255/255,blue: 255/255, alpha: 150/255)
+        
+        button2.addChild(myLabel4)
+        myLabel4.position = CGPoint(x:0,y:-18);
     }
     
     
