@@ -48,7 +48,59 @@ class GameScene: SKScene {
         bgImage.position = CGPoint(x:self.frame.midX, y:self.frame.midY);
         
         showWords("APPLE")
+        showTargetWords("     ")
     }
+    
+	// 設定目標的空格
+    func showTargetWords(_ string1: String) {
+        let t_len=string1.count
+        var tChars = Array(string1)
+        for i:Int in 0 ..< t_len {
+            var firstChar:Character
+            var t_working:Bool = false;
+            repeat{
+                let index:Int = Int(arc4random_uniform(UInt32(t_len)))
+                firstChar = tChars[index]
+                if firstChar=="#" {
+                }else{
+                    tChars[index]="#"
+                    t_working=true
+                }
+            }while t_working==false
+            
+            let x1=100+i*120
+            let y1=500
+            let Str1:String=String(firstChar)
+            showTargetWord(Str1,x1:x1,y1:y1)
+        }
+    }
+    
+    // 顯示文字和方塊
+    func showTargetWord(_ string1:String,x1:Int,y1:Int ) {
+        // 顯示空格圖片
+        let button2 = SKSpriteNode(imageNamed: "button1.png")
+        button2.zPosition = 1
+        self.addChild(button2)
+        button2.position = CGPoint(x:x1, y:y1);
+        button2.name=string1;
+
+
+        // 顯示文字
+        let myLabel4 = SKLabelNode(fontNamed:"AmericanTypewriter-Bold")
+        
+        myLabel4.zPosition=2
+        myLabel4.text = string1;
+        myLabel4.fontSize = 50;
+        myLabel4.fontColor=UIColor(red: 255/255, green: 255/255,blue: 255/255, alpha: 150/255)
+        //myLabel4.position = CGPoint(x:x1,y: y1-18);
+        // self.addChild(myLabel4)
+        
+        button2.addChild(myLabel4)
+        myLabel4.position = CGPoint(x:0,y:-18);
+    }
+    
+    
+    
     
     
     func showWords(_ string1: String) {
