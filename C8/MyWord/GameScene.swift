@@ -53,8 +53,10 @@ class GameScene: SKScene {
     
     func showWords(_ string1: String) {
         let t_len=string1.count
+        var tChars = Array(string1)
         for i:Int in 0 ..< t_len {
-            let firstChar:Character = Array(string1)[i]
+            let index:Int = Int(arc4random_uniform(UInt32(t_len)))
+            let firstChar:Character=tChars[index]
             var Str1:String="";
             let x1=100+i*120
             let y1=200
