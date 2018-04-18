@@ -9,6 +9,7 @@
 import SpriteKit
 
 class GameScene: SKScene {
+    var touchedNode  = SKNode()
     override func didMove(to view: SKView) {
         // 1. 下方的版權宣告
         let myLabel = SKLabelNode(fontNamed:"Chalkduster")
@@ -56,18 +57,7 @@ class GameScene: SKScene {
         let t_len=string1.count
         var tChars = Array(string1)
         for i:Int in 0 ..< t_len {
-            var firstChar:Character
-            var t_working:Bool = false;
-            repeat{
-                let index:Int = Int(arc4random_uniform(UInt32(t_len)))
-                firstChar = tChars[index]
-                if firstChar=="#" {
-                }else{
-                    tChars[index]="#"
-                    t_working=true
-                }
-            }while t_working==false
-            
+            let firstChar = tChars[i]
             let x1=100+i*120
             let y1=500
             let Str1:String=String(firstChar)
@@ -82,7 +72,6 @@ class GameScene: SKScene {
         button2.zPosition = 1
         self.addChild(button2)
         button2.position = CGPoint(x:x1, y:y1);
-        button2.name=string1;
 
 
         // 顯示文字
@@ -129,7 +118,7 @@ class GameScene: SKScene {
     func showWord(_ string1:String,x1:Int,y1:Int ) {
         // 5. 英文字母後的方塊
         let button2 = SKSpriteNode(imageNamed: "button2.png")
-        button2.zPosition = 1
+        button2.zPosition = 3
         self.addChild(button2)
         button2.position = CGPoint(x:x1, y:y1);
         button2.name=string1;
@@ -138,7 +127,7 @@ class GameScene: SKScene {
 		// 6. 英文字母
         let myLabel4 = SKLabelNode(fontNamed:"AmericanTypewriter-Bold")
         
-        myLabel4.zPosition=2
+        myLabel4.zPosition=4
         myLabel4.text = string1;
         myLabel4.fontSize = 50;
         myLabel4.fontColor=UIColor(red: 255/255, green: 255/255,blue: 255/255, alpha: 150/255)
@@ -148,7 +137,38 @@ class GameScene: SKScene {
     }
     
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+          if let touch = touches.first {
+        touchedNode.position = touch.location(in: self)
+        }
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?)  {
+        if let touch = touches.first {
+            
+        let location: CGPoint = touch.location(in: self)
+        
+        let touchedNode0=atPoint(location)
+        let t1 = touchedNode0.name ?? "Undefined"
+        
+        if t1=="Undefined" {
+        }else{
+            touchedNode=atPoint(location)
+            touchedNode.zPosition = 15
+            let liftUp = SKAction.scale(to: 1.2, duration: 0.2)
+            touchedNode.run(liftUp, withKey: "pickup")
+        }
+        }
+    }
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?)  {
+        if let touch = touches.first {
+            
+        var location: CGPoint = touch.location(in: self)
+        touchedNode.zPosition = 3
+        let dropDown = SKAction.scale(to: 1.0, duration: 0.2)
+        touchedNode.run(dropDown, withKey: "drop")
+        }
     }
    
     override func update(_ currentTime: TimeInterval) {
