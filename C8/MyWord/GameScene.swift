@@ -54,28 +54,29 @@ class GameScene: SKScene {
     func showWords(_ string1: String) {
         let t_len=string1.count
         for i:Int in 0 ..< t_len {
-            let firstChar = Array(string1)[i]
-            showWord(firstChar)
-            break
+            let firstChar:Character = Array(string1)[i]
+            var Str1:String="";
+            let x1=100+i*120
+            let y1=200
+            Str1=String(firstChar)
+            showWord(Str1,x1:x1,y1:y1)
         }
     }
     
-    func showWord(_ string1: Character) {
-        let x1=200
-        let y1=200
-        
+    func showWord(_ string1:String,x1:Int,y1:Int ) {
         // 5. 英文字母後的方塊
         let button2 = SKSpriteNode(imageNamed: "button2.png")
         button2.zPosition = 1
         self.addChild(button2)
         button2.position = CGPoint(x:x1, y:y1);
-        
+        button2.name=string1;
 		
-        // 6. 英文字母
+		
+		// 6. 英文字母
         let myLabel4 = SKLabelNode(fontNamed:"AmericanTypewriter-Bold")
         
         myLabel4.zPosition=2
-        myLabel4.text = "A";
+        myLabel4.text = string1;
         myLabel4.fontSize = 50;
         myLabel4.fontColor=UIColor(red: 255/255, green: 255/255,blue: 255/255, alpha: 150/255)
         
@@ -84,7 +85,7 @@ class GameScene: SKScene {
     }
     
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
     }
    
     override func update(_ currentTime: TimeInterval) {

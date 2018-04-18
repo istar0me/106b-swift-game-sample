@@ -1,5 +1,6 @@
 //
 //  GameViewController.swift
+//  test3
 //
 //  Created by Powen Ko on 8/7/15.
 //  Copyright (c) 2015 Powen Ko. All rights reserved.
@@ -16,8 +17,8 @@ class GameViewController: UIViewController {
         if let scene = GameScene(fileNamed:"GameScene") {
             // Configure the view.
             let skView = self.view as! SKView
-            //   skView.showsFPS = true
-            //   skView.showsNodeCount = true
+            skView.showsFPS = true
+            skView.showsNodeCount = true
             
             /* Sprite Kit applies additional optimizations to improve rendering performance */
             skView.ignoresSiblingOrder = true
