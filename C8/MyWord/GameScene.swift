@@ -91,17 +91,18 @@ class GameScene: SKScene {
             let x1=100+i*120
             let y1=500
             let Str1:String=String(firstChar)
-            showTargetWord(Str1,x1:x1,y1:y1)
+            showTargetWord(Str1,index:i,x1:x1,y1:y1)
         }
     }
     
     // 顯示文字和方塊
-    func showTargetWord(_ string1:String,x1:Int,y1:Int ) {
+    func showTargetWord(_ string1:String,index:Int,x1:Int,y1:Int ) {
         // 顯示空格圖片
         let button2 = SKSpriteNode(imageNamed: "button1.png")
         button2.zPosition = 1
         self.addChild(button2)
         button2.position = CGPoint(x:x1, y:y1);
+        button2.name="#"+String(index);
         
         
         // 顯示文字
@@ -190,9 +191,19 @@ class GameScene: SKScene {
         if let touch = touches.first {
             
             var location: CGPoint = touch.location(in: self)
-            touchedNode.zPosition = 3
-            let dropDown = SKAction.scale(to: 1.0, duration: 0.2)
-            touchedNode.run(dropDown, withKey: "drop")
+            let nodes: NSArray = self.nodes(at: location) as NSArray
+            for node: AnyObject in nodes as [AnyObject]{
+                var node1: SKNode=node as! SKNode
+                if node1.name==nil {
+                }else{
+                    //////////
+                    var myString:String = node1.name!  
+                    let myfind: Character = "#"
+                    if let idx = myString.index(of: myfind){
+                        print(myString)
+                    }
+                }
+            }
         }
     }
     
