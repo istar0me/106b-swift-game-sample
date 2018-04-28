@@ -170,8 +170,8 @@ class GameScene: SKScene {
             var location: CGPoint = touch.location(in: self)
 
             let nodes: NSArray = self.nodes(at: location) as NSArray
-            for node: AnyObject in nodes as [AnyObject] {
-                var node1: SKNode=node as! SKNode
+            for node: AnyObject in nodes as [AnyObject]{
+                let node1: SKNode=node as! SKNode
                 
                 if node1.name==nil {
                 }else{
@@ -189,7 +189,7 @@ class GameScene: SKScene {
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         if let touch = touches.first {
             
-            var location: CGPoint = touch.location(in: self)
+            let location: CGPoint = touch.location(in: self)
             
             if touchedNode.name==nil {
             }else{
@@ -205,20 +205,20 @@ class GameScene: SKScene {
             let nodes: NSArray = self.nodes(at: location) as NSArray
             var isCorrect:Bool = false
             for node: AnyObject in nodes as [AnyObject]{
-                var node1: SKNode=node as! SKNode
+                let node1: SKNode=node as! SKNode
                 if node1.name==nil {
                 }else{
                     //////////
-                    var myString:String = node1.name!
+                    let myString:String = node1.name!
                     let myfind: Character = "#"
                     if let idx = myString.index(of: myfind){
                         print(myString)
                         let myNewString  = (myString as NSString).substring(with: NSMakeRange(1, myString.count-1 ))
                         let index:Int = Int(myNewString)!
-                        var t2:String = m_arrayTarget[index]
+                        let t2:String = m_arrayTarget[index]
                         print(t2);
                         
-                        var t3:String = touchedNode.name!
+                        let t3:String = touchedNode.name!
                         if t2==t3 {
                             Wordadd(t3,buttonx:node1)
                             /////
@@ -229,6 +229,25 @@ class GameScene: SKScene {
                             let action7 = SKAction.removeFromParent()
                             let action8 = SKAction.sequence([action6,action7])
                             touchedNode.run(action8)
+                            /////
+                            m_score=m_score+1
+                            let t1=m_arrayTarget.count
+                            if(m_score>=t1){
+                                
+                                let myLabel4 = SKLabelNode(fontNamed:"AmericanTypewriter-Bold")
+                                myLabel4.zPosition = 10
+                                myLabel4.text = "Clear!";
+                                myLabel4.fontSize = 200;
+                                myLabel4.fontColor=UIColor(red: 1, green: 1,blue: 1, alpha: 200/255)
+                                myLabel4.position = CGPoint(x:self.frame.midX, y:self.frame.midY);
+                                self.addChild(myLabel4)
+                                myLabel4.alpha=0
+                                let action3 = SKAction.fadeAlpha(to: 1, duration: 1)
+                                myLabel4.run(action3)
+                                timer.invalidate()
+                            }
+                            
+                            
                             
                             
                             return
