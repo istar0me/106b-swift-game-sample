@@ -9,6 +9,11 @@
 import SpriteKit
 
 class GameScene: SKScene {
+    var m_arrayWords = ["APPLE","BANANA","CANDY","ORANGE"]
+    var m_arrayTarget:[String] = []
+    var m_array:[String] = []
+    var m_score=0
+
     let myLabel3 = SKLabelNode(fontNamed:"AmericanTypewriter-Bold")
     var counter = 0
     var touchedNode  = SKNode()
@@ -52,7 +57,9 @@ class GameScene: SKScene {
         self.addChild(bgImage)
         bgImage.position = CGPoint(x:self.frame.midX, y:self.frame.midY);
         
-        showWords("APPLE")
+        let index = Int(arc4random_uniform(UInt32(m_arrayWords.count)))
+        let string1 = m_arrayWords[index]
+        showWords(string1)
         showTargetWords("     ")
     }
     
