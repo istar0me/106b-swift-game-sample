@@ -9,7 +9,10 @@
 import SpriteKit
 
 class GameScene: SKScene {
+    let myLabel3 = SKLabelNode(fontNamed:"AmericanTypewriter-Bold")
+    var counter = 0
     var touchedNode  = SKNode()
+    var timer = Timer()
     override func didMove(to view: SKView) {
         // 1. 下方的版權宣告
         let myLabel = SKLabelNode(fontNamed:"Chalkduster")
@@ -29,9 +32,7 @@ class GameScene: SKScene {
         self.addChild(myLabel2)
         
         
-        // 3. 左上角的時間(30)
-        let myLabel3 = SKLabelNode(fontNamed:"AmericanTypewriter-Bold")
-        
+        // 3. 左上角的時間
         myLabel3.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
         
         myLabel3.text = "30";
@@ -40,6 +41,9 @@ class GameScene: SKScene {
         
         myLabel3.position = CGPoint(x:220+30,y: Int(self.size.height)-160);
         self.addChild(myLabel3)
+
+		// 設定倒數計時
+		timer = Timer.scheduledTimer(timeInterval: 1, target:self, selector: #selector(GameScene.updateCounter), userInfo: nil, repeats: true)
         
         
         // 4. 背景圖片
@@ -52,7 +56,12 @@ class GameScene: SKScene {
         showTargetWords("     ")
     }
     
-	// 設定目標的空格
+    @objc func updateCounter() {
+        counter += 1
+        myLabel3.text=String(counter)
+    }
+    
+    // 設定目標的空格
     func showTargetWords(_ string1: String) {
         let t_len=string1.count
         var tChars = Array(string1)
@@ -72,8 +81,8 @@ class GameScene: SKScene {
         button2.zPosition = 1
         self.addChild(button2)
         button2.position = CGPoint(x:x1, y:y1);
-
-
+        
+        
         // 顯示文字
         let myLabel4 = SKLabelNode(fontNamed:"AmericanTypewriter-Bold")
         
@@ -81,16 +90,10 @@ class GameScene: SKScene {
         myLabel4.text = string1;
         myLabel4.fontSize = 50;
         myLabel4.fontColor=UIColor(red: 255/255, green: 255/255,blue: 255/255, alpha: 150/255)
-        //myLabel4.position = CGPoint(x:x1,y: y1-18);
-        // self.addChild(myLabel4)
         
         button2.addChild(myLabel4)
         myLabel4.position = CGPoint(x:0,y:-18);
     }
-    
-    
-    
-    
     
     func showWords(_ string1: String) {
         let t_len=string1.count
@@ -137,40 +140,41 @@ class GameScene: SKScene {
     }
     
     
-    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-          if let touch = touches.first {
-        touchedNode.position = touch.location(in: self)
-        }
-    }
-    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?)  {
         if let touch = touches.first {
             
-        let location: CGPoint = touch.location(in: self)
-        
-        let touchedNode0=atPoint(location)
-        let t1 = touchedNode0.name ?? "Undefined"
-        
-        if t1=="Undefined" {
-        }else{
-            touchedNode=atPoint(location)
-            touchedNode.zPosition = 15
-            let liftUp = SKAction.scale(to: 1.2, duration: 0.2)
-            touchedNode.run(liftUp, withKey: "pickup")
+            let location: CGPoint = touch.location(in: self)
+            
+            let touchedNode0=atPoint(location)
+            let t1 = touchedNode0.name ?? "Undefined"
+            
+            if t1=="Undefined" {
+            }else{
+                touchedNode=atPoint(location)
+                touchedNode.zPosition = 15
+                let liftUp = SKAction.scale(to: 1.2, duration: 0.2)
+                touchedNode.run(liftUp, withKey: "pickup")
+            }
         }
+    }
+
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if let touch = touches.first {
+            let location: CGPoint = touch.location(in: self)
+            touchedNode.position = touch.location(in: self)
         }
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?)  {
         if let touch = touches.first {
             
-        var location: CGPoint = touch.location(in: self)
-        touchedNode.zPosition = 3
-        let dropDown = SKAction.scale(to: 1.0, duration: 0.2)
-        touchedNode.run(dropDown, withKey: "drop")
+            var location: CGPoint = touch.location(in: self)
+            touchedNode.zPosition = 3
+            let dropDown = SKAction.scale(to: 1.0, duration: 0.2)
+            touchedNode.run(dropDown, withKey: "drop")
         }
     }
-   
+    
     override func update(_ currentTime: TimeInterval) {
     }
 }
