@@ -59,8 +59,22 @@ class GameScene: SKScene {
         
         let index = Int(arc4random_uniform(UInt32(m_arrayWords.count)))
         let string1 = m_arrayWords[index]
+        let t_len=string1.count
+        m_arrayTarget = []
+        m_score=0
+        var t_arrayTarget = ""
+        for i in 0 ..< t_len {
+            m_arrayTarget.append(StringGetSUbstring(string1,start:i,End:i+1))
+            t_arrayTarget=t_arrayTarget+" "
+        }
+        
         showWords(string1)
-        showTargetWords("     ")
+        showTargetWords(t_arrayTarget)
+    }
+    
+    func StringGetSUbstring(_ myString:String,start:Int,End:Int)-> String{
+        let myNewString  = (myString as NSString).substring(with: NSMakeRange(start, End-start))
+        return myNewString
     }
     
     @objc func updateCounter() {
