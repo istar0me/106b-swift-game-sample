@@ -9,6 +9,8 @@
 import SpriteKit
 
 class GameScene: SKScene {
+    var touchedNodePosition=CGPoint(x: 0, y: 0)
+
     var m_arrayWords = ["APPLE","BANANA","CANDY","ORANGE"]
     var m_arrayTarget:[String] = []
     var m_array:[String] = []
@@ -165,7 +167,7 @@ class GameScene: SKScene {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?)  {
         if let touch = touches.first {
             
-            let location: CGPoint = touch.location(in: self)
+            var location: CGPoint = touch.location(in: self)
 
             let nodes: NSArray = self.nodes(at: location) as NSArray
             for node: AnyObject in nodes as [AnyObject] {
@@ -173,15 +175,13 @@ class GameScene: SKScene {
                 
                 if node1.name==nil {
                 }else{
-                    
                     touchedNode=node1
+                    touchedNodePosition=node1.position
                     touchedNode.zPosition = 15
                     let liftUp = SKAction.scale(to: 1.2, duration: 0.2)
                     touchedNode.run(liftUp, withKey: "pickup")
                     return;
                 }
-                
-                
             }
         }
     }
@@ -201,29 +201,38 @@ class GameScene: SKScene {
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?)  {
         if let touch = touches.first {
             
-            let location: CGPoint = touch.location(in: self)
+            var location: CGPoint = touch.location(in: self)
             let nodes: NSArray = self.nodes(at: location) as NSArray
+            var isCorrect:Bool = false
             for node: AnyObject in nodes as [AnyObject]{
                 var node1: SKNode=node as! SKNode
                 if node1.name==nil {
                 }else{
                     //////////
-                    var myString:String = node1.name!  
+                    var myString:String = node1.name!
                     let myfind: Character = "#"
                     if let idx = myString.index(of: myfind){
                         print(myString)
-                        let range =  myString.index(myString.startIndex, offsetBy: 1) ..< myString.index(myString.endIndex, offsetBy: 0)
-                        var myNewString = myString[range]
-                        print(myNewString);
+                        let myNewString  = (myString as NSString).substring(with: NSMakeRange(1, myString.count-1 ))
                         let index:Int = Int(myNewString)!
                         var t2:String = m_arrayTarget[index]
                         print(t2);
                         
                         var t3:String = touchedNode.name!
                         if t2==t3 {
-                            touchedNode.isHidden=true
-                            
                             Wordadd(t3,buttonx:node1)
+                            /////
+                            isCorrect = true
+                            let action1 = SKAction.scale(to: 5, duration: 0.3)
+                            let action2 = SKAction.colorize(with: UIColor(red: 1, green: 1, blue: 1, alpha: 0), colorBlendFactor: 1, duration: 0.3)
+                            let action6 = SKAction.group( [action1,action2])
+                            let action7 = SKAction.removeFromParent()
+                            let action8 = SKAction.sequence([action6,action7])
+                            touchedNode.run(action8)
+                            
+                            
+                            return
+                        }else{
                         }
                     }
                 }
