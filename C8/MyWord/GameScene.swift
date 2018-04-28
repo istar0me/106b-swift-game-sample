@@ -166,31 +166,42 @@ class GameScene: SKScene {
         if let touch = touches.first {
             
             let location: CGPoint = touch.location(in: self)
-            
-            let touchedNode0=atPoint(location)
-            let t1 = touchedNode0.name ?? "Undefined"
-            
-            if t1=="Undefined" {
-            }else{
-                touchedNode=atPoint(location)
-                touchedNode.zPosition = 15
-                let liftUp = SKAction.scale(to: 1.2, duration: 0.2)
-                touchedNode.run(liftUp, withKey: "pickup")
+
+            let nodes: NSArray = self.nodes(at: location) as NSArray
+            for node: AnyObject in nodes as [AnyObject] {
+                var node1: SKNode=node as! SKNode
+                
+                if node1.name==nil {
+                }else{
+                    
+                    touchedNode=node1
+                    touchedNode.zPosition = 15
+                    let liftUp = SKAction.scale(to: 1.2, duration: 0.2)
+                    touchedNode.run(liftUp, withKey: "pickup")
+                    return;
+                }
+                
+                
             }
         }
     }
 
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         if let touch = touches.first {
-            let location: CGPoint = touch.location(in: self)
-            touchedNode.position = touch.location(in: self)
+            
+            var location: CGPoint = touch.location(in: self)
+            
+            if touchedNode.name==nil {
+            }else{
+                touchedNode.position = touch.location(in: self)
+            }
         }
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?)  {
         if let touch = touches.first {
             
-            var location: CGPoint = touch.location(in: self)
+            let location: CGPoint = touch.location(in: self)
             let nodes: NSArray = self.nodes(at: location) as NSArray
             for node: AnyObject in nodes as [AnyObject]{
                 var node1: SKNode=node as! SKNode
@@ -201,12 +212,39 @@ class GameScene: SKScene {
                     let myfind: Character = "#"
                     if let idx = myString.index(of: myfind){
                         print(myString)
+                        let range =  myString.index(myString.startIndex, offsetBy: 1) ..< myString.index(myString.endIndex, offsetBy: 0)
+                        var myNewString = myString[range]
+                        print(myNewString);
+                        let index:Int = Int(myNewString)!
+                        var t2:String = m_arrayTarget[index]
+                        print(t2);
+                        
+                        var t3:String = touchedNode.name!
+                        if t2==t3 {
+                            touchedNode.isHidden=true
+                            
+                            Wordadd(t3,buttonx:node1)
+                        }
                     }
                 }
             }
         }
     }
-    
+
+
+    func Wordadd(_ string1:String,buttonx:SKNode){
+        let myLabel4 = SKLabelNode(fontNamed:"AmericanTypewriter-Bold")
+        
+        myLabel4.zPosition=3
+        myLabel4.text = string1;
+        myLabel4.fontSize = 50;
+        myLabel4.fontColor=UIColor(red: 255/255, green: 255/255,blue: 255/255, alpha: 150/255)
+        
+        buttonx.addChild(myLabel4)
+        myLabel4.position = CGPoint(x:0,y:-18);
+    }
+
+
     override func update(_ currentTime: TimeInterval) {
     }
 }
