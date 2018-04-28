@@ -237,6 +237,17 @@ class GameScene: SKScene {
                     }
                 }
             }
+            if isCorrect==false{
+                touchedNode.zPosition = 3
+                let action1 = SKAction.scale(to: 1.0, duration: 0.2)
+                let action2 = SKAction.wait(forDuration: 0.2)
+                let action3 = SKAction.scale(to: 1.2, duration: 0.2)
+                let action4 = SKAction.move(to: touchedNodePosition, duration: 0.2)
+                let action5 = SKAction.scale(to: 1.0, duration: 0.2)
+                let action6 = SKAction.sequence([action1,action2,action3,action4,action5])
+                touchedNode.run(action6)
+                // touchedNode.position=touchedNodePosition
+            }
         }
     }
 
