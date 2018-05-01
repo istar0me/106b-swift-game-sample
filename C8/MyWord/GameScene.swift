@@ -49,7 +49,7 @@ class GameScene: SKScene {
         myLabel3.position = CGPoint(x:220+30,y: Int(self.size.height)-160);
         self.addChild(myLabel3)
 
-		// 設定倒數計時
+		// 設定計時
 		timer = Timer.scheduledTimer(timeInterval: 1, target:self, selector: #selector(GameScene.updateCounter), userInfo: nil, repeats: true)
         
         
