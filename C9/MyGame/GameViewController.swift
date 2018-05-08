@@ -1,8 +1,8 @@
 //
 //  GameViewController.swift
-//  test3
+//  MyGame
 //
-//  Created by Powen Ko on 8/7/15.
+//  Created by Powen Ko on 2/11/15.
 //  Copyright (c) 2015 Powen Ko. All rights reserved.
 //
 
@@ -22,6 +22,10 @@ class GameViewController: UIViewController, MyProtocol {
             self.goMainMenu()
         }else if scene == "MyStage" {
             self.goMyStage()
+        }else if scene == "MyWord" {
+            self.goMyWord()
+        }else if scene == "MyScore" {
+            self.goMyScore()
         }
     }
     
@@ -29,7 +33,8 @@ class GameViewController: UIViewController, MyProtocol {
         let gameScene = GameScene(size: CGSize(width: 1024, height: 768))
         gameScene.delegate_MyProtocol = self
         gameScene.scaleMode = SKSceneScaleMode.aspectFill
-        self.skView!.presentScene(gameScene)
+        let action1=SKTransition.fade(withDuration: 2)
+        self.skView!.presentScene(gameScene, transition: action1)
     }
     
     func goMyStage() {
@@ -47,6 +52,24 @@ class GameViewController: UIViewController, MyProtocol {
         // var action9=SKTransition.fadeWithDuration(2)
         let action10=SKTransition.push(with: SKTransitionDirection.up , duration: 2)
         self.skView!.presentScene(gameScene, transition: action10)
+    }
+    
+    func goMyWord() {
+        let gameScene = MyWord(size: CGSize(width: 1024, height: 768))
+        gameScene.delegate_MyProtocol = self
+        gameScene.scaleMode = SKSceneScaleMode.aspectFill
+          let action1=SKTransition.flipHorizontal(withDuration: 2)
+        //  var action1=SKTransition.flipVerticalWithDuration(2)
+        self.skView!.presentScene(gameScene, transition: action1)
+    }
+    
+    func goMyScore() {
+        let gameScene = MyScore(size: CGSize(width: 1024, height: 768))
+        gameScene.delegate_MyProtocol = self
+        gameScene.scaleMode = SKSceneScaleMode.aspectFill
+        //var action1=SKTransition.flipHorizontalWithDuration(2)
+        let action1=SKTransition.flipVertical(withDuration: 2)
+        self.skView!.presentScene(gameScene, transition: action1)
     }
     
     override var shouldAutorotate : Bool {

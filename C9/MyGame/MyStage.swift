@@ -42,6 +42,7 @@ class MyStage: SKScene {
                 card1.zPosition = 1
                 self.addChild(card1)
                 card1.position = CGPoint(x:x1,y:y1)
+                card1.name=String(i)
                 
                 switch i{
                 case 0:
@@ -134,6 +135,37 @@ class MyStage: SKScene {
             touchedNode.zPosition = 0 // 改變深度
             let dropDown = SKAction.scale(to: 1.0, duration: 0.2) // 縮放動畫
             touchedNode.run(dropDown, withKey: "drop")
+            let nodes: NSArray = self.nodes(at: location) as NSArray // 抓取位置上所有的物件
+            
+            for node: AnyObject in nodes as [AnyObject]{
+                var node1: SKNode=node as! SKNode
+                if node1.name==nil {
+                }else{
+                    var myString:String = node1.name!
+                    let idx2 = myString.index(of: "0")
+
+					/* 根據數字跳轉到指定場景 */
+                    if let idx = myString.index(of: "0"){
+                        self.delegate_MyProtocol?.SceneChange("MyWord")
+                    }else if let idx = myString.index(of: "1"){
+                        self.delegate_MyProtocol?.SceneChange("MyWord")
+                    }else if let idx = myString.index(of: "2"){
+                        self.delegate_MyProtocol?.SceneChange("MyWord")
+                    }else if let idx = myString.index(of: "3"){
+                        self.delegate_MyProtocol?.SceneChange("MyWord")
+                    }else if let idx = myString.index(of: "4"){
+                        self.delegate_MyProtocol?.SceneChange("MyWord")
+                    }else if let idx = myString.index(of: "5"){
+                        self.delegate_MyProtocol?.SceneChange("MyWord")
+                    }else if let idx = myString.index(of: "6"){
+                        self.delegate_MyProtocol?.SceneChange("MyWord")
+                    }else if let idx = myString.index(of: "7"){
+                        self.delegate_MyProtocol?.SceneChange("MyWord")
+                    }else if let idx = myString.index(of: "8"){
+                        self.delegate_MyProtocol?.SceneChange("MyWord")
+                    }
+                }
+            }
         }
     }
     
