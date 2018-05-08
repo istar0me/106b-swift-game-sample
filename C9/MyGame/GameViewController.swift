@@ -1,0 +1,39 @@
+//
+//  GameViewController.swift
+//  test3
+//
+//  Created by Powen Ko on 8/7/15.
+//  Copyright (c) 2015 Powen Ko. All rights reserved.
+//
+
+import UIKit
+import SpriteKit
+
+class GameViewController: UIViewController {
+    var skView: SKView?
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.skView = self.view as? SKView
+    }
+    
+    override var shouldAutorotate : Bool {
+        return true
+    }
+    
+    override var supportedInterfaceOrientations : UIInterfaceOrientationMask {
+        if UIDevice.current.userInterfaceIdiom == .phone {
+            return .allButUpsideDown
+        } else {
+            return .all
+        }
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Release any cached data, images, etc that aren't in use.
+    }
+    
+    override var prefersStatusBarHidden : Bool {
+        return true
+    }
+}
