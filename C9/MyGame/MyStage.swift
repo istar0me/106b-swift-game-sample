@@ -9,6 +9,7 @@
 import SpriteKit
 
 class MyStage: SKScene {
+    var delegate_MyProtocol: MyProtocol?
     var touchedNode  = SKNode()
     let myLabel = SKLabelNode(fontNamed:"Chalkduster")
     override func didMove(to view: SKView) {
@@ -129,6 +130,7 @@ class MyStage: SKScene {
     // 點選放開的觸控反應
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         if let touch = touches.first {
+            let location: CGPoint = touch.location(in: self)
             touchedNode.zPosition = 0 // 改變深度
             let dropDown = SKAction.scale(to: 1.0, duration: 0.2) // 縮放動畫
             touchedNode.run(dropDown, withKey: "drop")

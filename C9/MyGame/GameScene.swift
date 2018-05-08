@@ -9,6 +9,7 @@
 import SpriteKit
 
 class GameScene: SKScene {
+    var delegate_MyProtocol: MyProtocol?
     var button1 = SKSpriteNode(imageNamed: "button1.png")
     var button2 = SKSpriteNode(imageNamed: "button1.png")
     
@@ -86,6 +87,15 @@ class GameScene: SKScene {
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         button1.texture=SKTexture(imageNamed: "button1.png")
         button2.texture=SKTexture(imageNamed: "button1.png")
+        if let touch = touches.first {
+            let location: CGPoint = touch.location(in: self) // 取得按鍵位置
+            if button2.contains(location) {
+                self.delegate_MyProtocol?.SceneChange("MyStage") // 實際切換場景的動作
+            }
+            
+            if button1.contains(location) {
+            }
+        }
     }
     
     override func update(_ currentTime: TimeInterval) {

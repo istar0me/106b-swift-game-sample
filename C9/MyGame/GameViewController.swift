@@ -9,23 +9,32 @@
 import UIKit
 import SpriteKit
 
-class GameViewController: UIViewController {
+class GameViewController: UIViewController, MyProtocol {
     var skView: SKView?
     override func viewDidLoad() {
         super.viewDidLoad()
         self.skView = self.view as? SKView
-//        goMainMenu()
-        goMyStage()
+        SceneChange("MainMenu")
+    }
+    
+    func SceneChange(_ scene: String) {
+        if scene == "MainMenu" {
+            self.goMainMenu()
+        }else if scene == "MyStage" {
+            self.goMyStage()
+        }
     }
     
     func goMainMenu() {
         let gameScene = GameScene(size: CGSize(width: 1024, height: 768))
+        gameScene.delegate_MyProtocol = self
         gameScene.scaleMode = SKSceneScaleMode.aspectFill
         self.skView!.presentScene(gameScene)
     }
     
     func goMyStage() {
         let gameScene = MyStage(size: CGSize(width: 1024, height: 768))
+        gameScene.delegate_MyProtocol = self
         gameScene.scaleMode = SKSceneScaleMode.aspectFill
         self.skView!.presentScene(gameScene)
     }
