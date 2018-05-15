@@ -6,11 +6,73 @@
 //  Copyright (c) 2015 Powen Ko. All rights reserved.
 //
 import SpriteKit
+import AVFoundation // 匯入 AVFoundation 框架
 class GameScene: SKScene {
     var delegate_MyProtocol: MyProtocol?
     var button1 = SKSpriteNode(imageNamed: "button1.png")
     var button2 = SKSpriteNode(imageNamed: "button1.png")
+    
+    // 宣告 AVAudioPlayer 類別的變數
+    var avPlayer:AVAudioPlayer! = nil
+    var avPlayer2:AVAudioPlayer! = nil
+    var avPlayer3:AVAudioPlayer! = nil
+    
     override func didMove(to view: SKView) {
+        /* 讀取和設定音樂 */
+        // 1. 背景音樂
+        let fileURL:URL = Bundle.main.url(forResource: "song",withExtension: "mp3")! // 指定播放的檔案
+        
+        // 錯誤處理
+        var error: NSError?
+        do {
+            self.avPlayer = try AVAudioPlayer(contentsOf: fileURL)
+        } catch var error1 as NSError {
+            error = error1
+            self.avPlayer = nil
+        }
+        if self.avPlayer == nil {
+            if let e = error {
+                print(e.localizedDescription)
+            }
+        }
+        self.avPlayer.volume = 0.3 // 設定音量
+        self.avPlayer.numberOfLoops = -1 // 設定播放的次數，負數為重複播放
+        self.avPlayer.play() // 開始播放
+        
+        
+        // 2. beep 音效
+        let fileURL2:URL = Bundle.main.url(forResource: "beep",withExtension: "mp3")! // 指定播放的檔案
+        
+        // 錯誤處理
+        var error2: NSError?
+        do {
+            self.avPlayer2 = try AVAudioPlayer(contentsOf: fileURL2)
+        } catch var error as NSError {
+            error2 = error
+            self.avPlayer2 = nil
+        }
+        if self.avPlayer2 == nil {
+            if let e = error {
+                print(e.localizedDescription)
+            }
+        }
+        
+        
+        // 3. click 音效
+        let fileURL3:URL = Bundle.main.url(forResource: "click",withExtension: "mp3")! // 指定播放的檔案
+        var error3: NSError?
+        do {
+            self.avPlayer3 = try AVAudioPlayer(contentsOf: fileURL3)
+        } catch var error as NSError {
+            error3 = error
+            self.avPlayer3 = nil
+        }
+        if self.avPlayer3 == nil {
+            if let e = error {
+                print(e.localizedDescription)
+            }
+        }
+        
         /* 設定遊戲的場景 */
         // 1. 版權宣告標籤
         let myLabel = SKLabelNode(fontNamed:"Chalkduster")
@@ -64,6 +126,20 @@ class GameScene: SKScene {
     
     // 按下去的觸控反應
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if let touch = touches.first {
+            let location: CGPoint = touch.location(in: self)
+            // 點擊 Start 按鈕播放 beep.mp3
+            if button2.contains(location) {
+                button2.texture=SKTexture(imageNamed: "button2.png")
+                self.avPlayer2.play()
+            }
+            
+            // 點擊 About Us 按鈕播放 click.mp3
+            if button1.contains(location) {
+                button1.texture=SKTexture(imageNamed: "button2.png")
+                self.avPlayer3.play()
+            }
+        }
     }
     
     // 移動的反應
