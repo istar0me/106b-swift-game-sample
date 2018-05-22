@@ -85,5 +85,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         gound.physicsBody = SKPhysicsBody(rectangleOf: gound.size) // 設定物理大小為實際圖片的大小
         gound.physicsBody?.isDynamic = false // 設定動態物理計算，代表此物件會受到物理反應改變為自動改變位置（在此不設定）
         gound.physicsBody?.categoryBitMask = levelCat // 設定物件的種類為 levelCat
+        
+        // 沙灘移動動畫
+        let ani1 = SKAction.move(to: CGPoint(x: -gound.size.width/2, y: gound.size.height), duration: speed)
+        let ani2 = SKAction.move(to: gound.position, duration: 0)
+        let ani3 = SKAction.sequence([ani1,ani2])
+        let ani4 = SKAction.repeatForever(ani3)
+        gound.run(ani4)
     }
 }
