@@ -9,6 +9,7 @@ import SpriteKit
 class GameScene: SKScene, SKPhysicsContactDelegate {
     let myScore = SKLabelNode(fontNamed:"AmericanTypewriter-Bold")
     var fly:SKSpriteNode = SKSpriteNode()
+    var gound:SKSpriteNode = SKSpriteNode()
     // 指定物件的種類
     let flyCat:UInt32 = 1 << 0      //1 設定為主角的種類
     let pipeCat:UInt32 = 1 << 1     //2 設定為水管的種類
@@ -42,6 +43,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         
         FunSet_Fly()
+        FunSet_Gound()
         self.physicsWorld.gravity = CGVector(dx: 0.0,dy: -5.0) // 地心引力的強度（在此為向下 5）
         self.physicsWorld.contactDelegate = self // 物理反應的觸發類別，在此為自己（GameScene 類別）
     }
@@ -68,5 +70,20 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         fly.physicsBody?.categoryBitMask = flyCat // 設定物件的種類為 flyCat
         fly.physicsBody?.collisionBitMask = levelCat | pipeCat // 設定物件會被碰撞的種類有 levelCat 和 PipeCat
         fly.physicsBody?.contactTestBitMask = levelCat | pipeCat // 指定不會被穿透的物件
+    }
+    
+    // 設定地板與碰撞效果
+    func FunSet_Gound(){
+        let speed = 10.0
+        let gound1 = SKTexture(imageNamed: "game5_bg3.png") // 地板圖片
+        gound = SKSpriteNode(texture: gound1) //
+        gound.zPosition = 2 // 設定高度
+        gound.position = CGPoint(x:self.frame.midX, y:gound.size.height); // 設定位置
+        self.addChild(gound)
+        
+        // 物理效果
+        gound.physicsBody = SKPhysicsBody(rectangleOf: gound.size) // 設定物理大小為實際圖片的大小
+        gound.physicsBody?.isDynamic = false // 設定動態物理計算，代表此物件會受到物理反應改變為自動改變位置（在此不設定）
+        gound.physicsBody?.categoryBitMask = levelCat // 設定物件的種類為 levelCat
     }
 }
