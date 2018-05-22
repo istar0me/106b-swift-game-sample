@@ -35,9 +35,14 @@ class GameScene: SKScene {
         
         
         // 4. 主角
-        let fly = SKSpriteNode(imageNamed: "fly1.png")
-        fly.zPosition = 2
-        fly.position = CGPoint(x:self.frame.midX, y:self.frame.midY);
+        let fly1 = SKTexture(imageNamed: "fly1.png") // 主角圖片 1
+        let fly2 = SKTexture(imageNamed: "fly2.png") // 主角圖片 2
+        let ani1 = SKAction.animate(with: [fly1,fly2], timePerFrame:0.25) // 0.25 秒切換圖片
+        let ani2 = SKAction.repeatForever(ani1) // 重複切換圖片
+        fly = SKSpriteNode(texture: fly1) //
+        fly.run(ani2) // 執行動畫
+        fly.zPosition = 2 // 設定高度
+        fly.position = CGPoint(x:self.frame.midX, y:self.frame.midY); // 設定位置
         self.addChild(fly)
     }
     
