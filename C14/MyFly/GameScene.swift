@@ -8,6 +8,7 @@
 import SpriteKit
 class GameScene: SKScene, SKPhysicsContactDelegate {
     let myScore = SKLabelNode(fontNamed:"AmericanTypewriter-Bold")
+    var fly:SKSpriteNode = SKSpriteNode()
     override func didMove(to view: SKView) {
         /* 設定遊戲的場景 */
         // 1. 版權宣告標籤
@@ -53,7 +54,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         self.physicsWorld.contactDelegate = self // 物理反應的觸發類別，在此為自己（GameScene 類別）
     }
     
+    // 點擊後向上跳躍
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.fly.physicsBody?.velocity=CGVector(dx: 0,dy: 0) // 設定物件的重力加速度，在此為 0
+        self.fly.physicsBody?.applyImpulse(CGVector(dx: 0,dy: 200)) // 向上推動 200
     }
     
     override func update(_ currentTime: TimeInterval) {
