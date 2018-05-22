@@ -1,0 +1,50 @@
+//
+//  GameScene.swift
+//  MyFly
+//
+//  Created by Powen Ko on 3/11/15.
+//  Copyright (c) 2015 Powen Ko. All rights reserved.
+//
+import SpriteKit
+class GameScene: SKScene {
+    let myScore = SKLabelNode(fontNamed:"AmericanTypewriter-Bold")
+    override func didMove(to view: SKView) {
+        /* 設定遊戲的場景 */
+        // 1. 版權宣告標籤
+        let myLabel = SKLabelNode(fontNamed:"Chalkduster")
+        myLabel.text = "copyright 2015 PowenKo.com, All Rights Reserved.";
+        myLabel.fontSize = 32;
+        myLabel.position = CGPoint(x:self.frame.midX,y: 100);
+        self.addChild(myLabel)
+        
+        
+        // 2. 成績
+        myScore.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left // 文字置左
+        myScore.text = "30";
+        myScore.fontSize = 50;
+        myScore.fontColor = UIColor(red: 1/255, green: 1/255,blue: 1/255, alpha: 150/255)
+        myScore.position = CGPoint(x:30,y: Int(self.size.height)-160);
+        self.addChild(myScore)
+        
+        
+        // 3. 背景（藍天）
+        let bgImage = SKSpriteNode(imageNamed: "game5_bg1.jpg")
+        bgImage.zPosition = -1
+        bgImage.position = CGPoint(x:self.frame.midX, y:self.frame.midY);
+        self.addChild(bgImage)
+        
+        
+        // 4. 主角
+        let fly = SKSpriteNode(imageNamed: "fly1.png")
+        fly.zPosition = 2
+        fly.position = CGPoint(x:self.frame.midX, y:self.frame.midY);
+        self.addChild(fly)
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+    }
+    
+    override func update(_ currentTime: TimeInterval) {
+        /* Called before each frame is rendered */
+    }
+}
