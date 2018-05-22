@@ -10,6 +10,10 @@
 		D31EE19E1AA4F49400D2E8B9 /* icon1.png in Resources */ = {isa = PBXBuildFile; fileRef = D31EE19B1AA4F49400D2E8B9 /* icon1.png */; };
 		D31EE19F1AA4F49400D2E8B9 /* icon2.png in Resources */ = {isa = PBXBuildFile; fileRef = D31EE19C1AA4F49400D2E8B9 /* icon2.png */; };
 		D31EE1A01AA4F49400D2E8B9 /* icon3.png in Resources */ = {isa = PBXBuildFile; fileRef = D31EE19D1AA4F49400D2E8B9 /* icon3.png */; };
+		D31EE1AE1AA52F6900D2E8B9 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D31EE1AD1AA52F6900D2E8B9 /* Default@2x.png */; };
+		D31EE1B01AA52F7D00D2E8B9 /* Default-retina@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D31EE1AF1AA52F7D00D2E8B9 /* Default-retina@2x.png */; };
+		D31EE1B21AA52F9900D2E8B9 /* Default-Portrait~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = D31EE1B11AA52F9900D2E8B9 /* Default-Portrait~ipad.png */; };
+		D31EE1B41AA530C400D2E8B9 /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = D31EE1B31AA530C400D2E8B9 /* Default-Landscape~ipad.png */; };
 		D32FAD4F1A9E91D300C0B96E /* beep.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D32FAD4C1A9E91D300C0B96E /* beep.mp3 */; };
 		D32FAD501A9E91D300C0B96E /* click.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D32FAD4D1A9E91D300C0B96E /* click.mp3 */; };
 		D32FAD511A9E91D300C0B96E /* song.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D32FAD4E1A9E91D300C0B96E /* song.mp3 */; };
@@ -44,27 +48,20 @@
 		D3DA98BD1A8C2F4F006F6C06 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3DA98BB1A8C2F4F006F6C06 /* Main.storyboard */; };
 		D3DA98BF1A8C2F4F006F6C06 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3DA98BE1A8C2F4F006F6C06 /* Images.xcassets */; };
 		D3DA98C21A8C2F4F006F6C06 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3DA98C01A8C2F4F006F6C06 /* LaunchScreen.xib */; };
-		D3DA98CE1A8C2F4F006F6C06 /* MyGameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DA98CD1A8C2F4F006F6C06 /* MyGameTests.swift */; };
 		D3DA9ED31A9D096500526D5F /* bear1.png in Resources */ = {isa = PBXBuildFile; fileRef = D3DA9ED21A9D096500526D5F /* bear1.png */; };
 		D3DA9ED51A9D096E00526D5F /* game4bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D3DA9ED41A9D096E00526D5F /* game4bg.jpg */; };
 		D3DA9ED81A9D09A700526D5F /* game4button1.png in Resources */ = {isa = PBXBuildFile; fileRef = D3DA9ED61A9D09A700526D5F /* game4button1.png */; };
 		D3DA9ED91A9D09A700526D5F /* game4button2.png in Resources */ = {isa = PBXBuildFile; fileRef = D3DA9ED71A9D09A700526D5F /* game4button2.png */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		D3DA98C81A8C2F4F006F6C06 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D3DA98A61A8C2F4F006F6C06 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = D3DA98AD1A8C2F4F006F6C06;
-			remoteInfo = MyGame;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		D31EE19B1AA4F49400D2E8B9 /* icon1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon1.png; sourceTree = "<group>"; };
 		D31EE19C1AA4F49400D2E8B9 /* icon2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon2.png; sourceTree = "<group>"; };
 		D31EE19D1AA4F49400D2E8B9 /* icon3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon3.png; sourceTree = "<group>"; };
+		D31EE1AD1AA52F6900D2E8B9 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		D31EE1AF1AA52F7D00D2E8B9 /* Default-retina@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-retina@2x.png"; sourceTree = "<group>"; };
+		D31EE1B11AA52F9900D2E8B9 /* Default-Portrait~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait~ipad.png"; sourceTree = "<group>"; };
+		D31EE1B31AA530C400D2E8B9 /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape~ipad.png"; sourceTree = "<group>"; };
 		D32FAD4C1A9E91D300C0B96E /* beep.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = beep.mp3; sourceTree = "<group>"; };
 		D32FAD4D1A9E91D300C0B96E /* click.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = click.mp3; sourceTree = "<group>"; };
 		D32FAD4E1A9E91D300C0B96E /* song.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = song.mp3; sourceTree = "<group>"; };
@@ -101,7 +98,6 @@
 		D3DA98BC1A8C2F4F006F6C06 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D3DA98BE1A8C2F4F006F6C06 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		D3DA98C11A8C2F4F006F6C06 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		D3DA98C71A8C2F4F006F6C06 /* MyGameTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyGameTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3DA98CC1A8C2F4F006F6C06 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D3DA98CD1A8C2F4F006F6C06 /* MyGameTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyGameTests.swift; sourceTree = "<group>"; };
 		D3DA9ED21A9D096500526D5F /* bear1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bear1.png; sourceTree = "<group>"; };
@@ -120,19 +116,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D3DA98C41A8C2F4F006F6C06 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		D31EE19A1AA4F47F00D2E8B9 /* icon */ = {
 			isa = PBXGroup;
 			children = (
+				D31EE1B11AA52F9900D2E8B9 /* Default-Portrait~ipad.png */,
+				D31EE1AF1AA52F7D00D2E8B9 /* Default-retina@2x.png */,
+				D31EE1B31AA530C400D2E8B9 /* Default-Landscape~ipad.png */,
+				D31EE1AD1AA52F6900D2E8B9 /* Default@2x.png */,
 				D31EE19B1AA4F49400D2E8B9 /* icon1.png */,
 				D31EE19C1AA4F49400D2E8B9 /* icon2.png */,
 				D31EE19D1AA4F49400D2E8B9 /* icon3.png */,
@@ -189,7 +182,6 @@
 			isa = PBXGroup;
 			children = (
 				D3DA98AE1A8C2F4F006F6C06 /* MyGame.app */,
-				D3DA98C71A8C2F4F006F6C06 /* MyGameTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -290,24 +282,6 @@
 			productReference = D3DA98AE1A8C2F4F006F6C06 /* MyGame.app */;
 			productType = "com.apple.product-type.application";
 		};
-		D3DA98C61A8C2F4F006F6C06 /* MyGameTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = D3DA98D41A8C2F4F006F6C06 /* Build configuration list for PBXNativeTarget "MyGameTests" */;
-			buildPhases = (
-				D3DA98C31A8C2F4F006F6C06 /* Sources */,
-				D3DA98C41A8C2F4F006F6C06 /* Frameworks */,
-				D3DA98C51A8C2F4F006F6C06 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				D3DA98C91A8C2F4F006F6C06 /* PBXTargetDependency */,
-			);
-			name = MyGameTests;
-			productName = MyGameTests;
-			productReference = D3DA98C71A8C2F4F006F6C06 /* MyGameTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -321,11 +295,6 @@
 					D3DA98AD1A8C2F4F006F6C06 = {
 						CreatedOnToolsVersion = 6.1.1;
 						LastSwiftMigration = 0930;
-					};
-					D3DA98C61A8C2F4F006F6C06 = {
-						CreatedOnToolsVersion = 6.1.1;
-						LastSwiftMigration = 0930;
-						TestTargetID = D3DA98AD1A8C2F4F006F6C06;
 					};
 				};
 			};
@@ -343,7 +312,6 @@
 			projectRoot = "";
 			targets = (
 				D3DA98AD1A8C2F4F006F6C06 /* MyGame */,
-				D3DA98C61A8C2F4F006F6C06 /* MyGameTests */,
 			);
 		};
 /* End PBXProject section */
@@ -354,6 +322,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D361D1CA1A8D4DB400B1445A /* bg.jpg in Resources */,
+				D31EE1B01AA52F7D00D2E8B9 /* Default-retina@2x.png in Resources */,
 				D3DA9ED91A9D09A700526D5F /* game4button2.png in Resources */,
 				D3A80B971A9C0260004C541E /* card3.png in Resources */,
 				D369489C1A9D0A6E0075DFD1 /* game3bg.jpg in Resources */,
@@ -369,6 +338,8 @@
 				D31EE19F1AA4F49400D2E8B9 /* icon2.png in Resources */,
 				D39F11691A8E78310046B7E0 /* effect.png in Resources */,
 				D36948AF1A9D187F0075DFD1 /* Scorebutton2.png in Resources */,
+				D31EE1B21AA52F9900D2E8B9 /* Default-Portrait~ipad.png in Resources */,
+				D31EE1B41AA530C400D2E8B9 /* Default-Landscape~ipad.png in Resources */,
 				D369489B1A9D0A6E0075DFD1 /* cloud.png in Resources */,
 				D32FAD511A9E91D300C0B96E /* song.mp3 in Resources */,
 				D3DA98BF1A8C2F4F006F6C06 /* Images.xcassets in Resources */,
@@ -380,18 +351,12 @@
 				D31EE1A01AA4F49400D2E8B9 /* icon3.png in Resources */,
 				D32FAD501A9E91D300C0B96E /* click.mp3 in Resources */,
 				D361D1CD1A8D4F3A00B1445A /* button1.png in Resources */,
+				D31EE1AE1AA52F6900D2E8B9 /* Default@2x.png in Resources */,
 				D361D1CE1A8D4F3A00B1445A /* button2.png in Resources */,
 				D369489E1A9D0A6E0075DFD1 /* scorebg.png in Resources */,
 				D369489D1A9D0A6E0075DFD1 /* place.png in Resources */,
 				D3DA9ED81A9D09A700526D5F /* game4button1.png in Resources */,
 				D3A80B991A9C0260004C541E /* card1.png in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D3DA98C51A8C2F4F006F6C06 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -412,23 +377,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D3DA98C31A8C2F4F006F6C06 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D3DA98CE1A8C2F4F006F6C06 /* MyGameTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		D3DA98C91A8C2F4F006F6C06 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = D3DA98AD1A8C2F4F006F6C06 /* MyGame */;
-			targetProxy = D3DA98C81A8C2F4F006F6C06 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		D3DA98BB1A8C2F4F006F6C06 /* Main.storyboard */ = {
@@ -546,7 +495,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -555,12 +504,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = MyGame/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.powenko.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.powenko.mygame;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -568,50 +518,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				INFOPLIST_FILE = MyGame/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.powenko.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.powenko.mygame;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		D3DA98D51A8C2F4F006F6C06 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = MyGameTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "looptek.com.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MyGame.app/MyGame";
-			};
-			name = Debug;
-		};
-		D3DA98D61A8C2F4F006F6C06 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = MyGameTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "looptek.com.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MyGame.app/MyGame";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -632,15 +546,6 @@
 			buildConfigurations = (
 				D3DA98D21A8C2F4F006F6C06 /* Debug */,
 				D3DA98D31A8C2F4F006F6C06 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		D3DA98D41A8C2F4F006F6C06 /* Build configuration list for PBXNativeTarget "MyGameTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				D3DA98D51A8C2F4F006F6C06 /* Debug */,
-				D3DA98D61A8C2F4F006F6C06 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

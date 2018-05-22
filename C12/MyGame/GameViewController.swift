@@ -101,6 +101,7 @@ class GameViewController: UIViewController , ADBannerViewDelegate, MyProtocol {
     override var shouldAutorotate : Bool {
         return true
     }
+
     override var supportedInterfaceOrientations : UIInterfaceOrientationMask {
         if UIDevice.current.userInterfaceIdiom == .phone {
             return .allButUpsideDown
@@ -108,7 +109,6 @@ class GameViewController: UIViewController , ADBannerViewDelegate, MyProtocol {
             return .all
         }
     }
-   
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
