@@ -75,22 +75,46 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     // 設定地板與碰撞效果
     func FunSet_Gound(){
         let speed = 10.0
+        /* 沙灘A */
         let gound1 = SKTexture(imageNamed: "game5_bg3.png") // 地板圖片
         gound = SKSpriteNode(texture: gound1) //
         gound.zPosition = 2 // 設定高度
         gound.position = CGPoint(x:self.frame.midX, y:gound.size.height); // 設定位置
         self.addChild(gound)
         
-        // 物理效果
+        // 沙灘A物理效果
         gound.physicsBody = SKPhysicsBody(rectangleOf: gound.size) // 設定物理大小為實際圖片的大小
         gound.physicsBody?.isDynamic = false // 設定動態物理計算，代表此物件會受到物理反應改變為自動改變位置（在此不設定）
         gound.physicsBody?.categoryBitMask = levelCat // 設定物件的種類為 levelCat
         
-        // 沙灘移動動畫
+        // 沙灘A移動動畫
         let ani1 = SKAction.move(to: CGPoint(x: -gound.size.width/2, y: gound.size.height), duration: speed)
         let ani2 = SKAction.move(to: gound.position, duration: 0)
         let ani3 = SKAction.sequence([ani1,ani2])
         let ani4 = SKAction.repeatForever(ani3)
         gound.run(ani4)
+        
+        /* 沙灘B */
+        let gound2 = SKSpriteNode(texture: gound1) //
+        gound2.zPosition = 2 // 設定高度
+        gound2.position = CGPoint(x:self.frame.midX+gound2.size.width , y:gound2.size.height); // 設定位置
+        self.addChild(gound2)
+        
+        // 沙灘B物理效果
+        gound2.physicsBody=SKPhysicsBody(rectangleOf: gound2.size) // 設定物理大小為實際圖片的大小
+        gound2.physicsBody?.isDynamic=false // 設定動態物理計算，代表此物件會受到物理反應改變為自動改變位置（在此不設定）
+        gound2.physicsBody?.categoryBitMask = levelCat // 設定物件的種類為 levelCat
+        
+        // 沙灘B移動動畫
+        let ani1b = SKAction.move(to: CGPoint(x: self.frame.midX, y: gound2.size.height), duration: speed)
+        let ani2b = SKAction.move(to: gound2.position, duration: 0)
+        let ani3b = SKAction.sequence([ani1b,ani2b])
+        let ani4b=SKAction.repeatForever(ani3b)
+        gound2.run(ani4b)
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.fly.physicsBody?.velocity = CGVector(dx: 0, dy: 0)
+        self.fly.physicsBody?.applyImpulse(CGVector(dx: 0, dy: 100))
     }
 }
