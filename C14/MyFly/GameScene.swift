@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Powen Ko. All rights reserved.
 //
 import SpriteKit
-class GameScene: SKScene {
+class GameScene: SKScene, SKPhysicsContactDelegate {
     let myScore = SKLabelNode(fontNamed:"AmericanTypewriter-Bold")
     override func didMove(to view: SKView) {
         /* 設定遊戲的場景 */
@@ -44,6 +44,13 @@ class GameScene: SKScene {
         fly.zPosition = 2 // 設定高度
         fly.position = CGPoint(x:self.frame.midX, y:self.frame.midY); // 設定位置
         self.addChild(fly)
+        
+        // 物理效果
+        fly.physicsBody = SKPhysicsBody(rectangleOf: fly.size) // 設定物理大小為實際圖片的大小
+        fly.physicsBody?.isDynamic = true // 設定動態物理計算，代表此物件會受到物理反應改變為自動改變位置（在此為往下掉）
+        fly.physicsBody?.allowsRotation = false // 執行物理反應時，是否會旋轉（在此設定否）
+        self.physicsWorld.gravity = CGVector(dx: 0.0,dy: -5.0) // 地心引力的強度（在此為向下 5）
+        self.physicsWorld.contactDelegate = self // 物理反應的觸發類別，在此為自己（GameScene 類別）
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
