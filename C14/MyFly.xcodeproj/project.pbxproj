@@ -17,7 +17,6 @@
 		D39A51C51AB1164200476901 /* MyFlyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39A51C41AB1164200476901 /* MyFlyTests.swift */; };
 		D39A51D71AB116C100476901 /* button1.png in Resources */ = {isa = PBXBuildFile; fileRef = D39A51CF1AB116C100476901 /* button1.png */; };
 		D39A51D81AB116C100476901 /* button2.png in Resources */ = {isa = PBXBuildFile; fileRef = D39A51D01AB116C100476901 /* button2.png */; };
-		D39A51DB1AB116C100476901 /* game4bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D39A51D31AB116C100476901 /* game4bg.jpg */; };
 		D39A51DC1AB116C100476901 /* game5_bg1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D39A51D41AB116C100476901 /* game5_bg1.jpg */; };
 		D39A51DD1AB116C100476901 /* game5_bg2.png in Resources */ = {isa = PBXBuildFile; fileRef = D39A51D51AB116C100476901 /* game5_bg2.png */; };
 		D39A51DE1AB116C100476901 /* game5_bg3.png in Resources */ = {isa = PBXBuildFile; fileRef = D39A51D61AB116C100476901 /* game5_bg3.png */; };
@@ -53,7 +52,6 @@
 		D39A51C41AB1164200476901 /* MyFlyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFlyTests.swift; sourceTree = "<group>"; };
 		D39A51CF1AB116C100476901 /* button1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button1.png; sourceTree = "<group>"; };
 		D39A51D01AB116C100476901 /* button2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button2.png; sourceTree = "<group>"; };
-		D39A51D31AB116C100476901 /* game4bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = game4bg.jpg; sourceTree = "<group>"; };
 		D39A51D41AB116C100476901 /* game5_bg1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = game5_bg1.jpg; sourceTree = "<group>"; };
 		D39A51D51AB116C100476901 /* game5_bg2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = game5_bg2.png; sourceTree = "<group>"; };
 		D39A51D61AB116C100476901 /* game5_bg3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = game5_bg3.png; sourceTree = "<group>"; };
@@ -151,7 +149,6 @@
 				D39A51E11AB116CD00476901 /* star.png */,
 				D39A51CF1AB116C100476901 /* button1.png */,
 				D39A51D01AB116C100476901 /* button2.png */,
-				D39A51D31AB116C100476901 /* game4bg.jpg */,
 				D39A51D41AB116C100476901 /* game5_bg1.jpg */,
 				D39A51D51AB116C100476901 /* game5_bg2.png */,
 				D39A51D61AB116C100476901 /* game5_bg3.png */,
@@ -246,7 +243,6 @@
 				D39A51E71AB1186800476901 /* fly1.png in Resources */,
 				D39A51B61AB1164200476901 /* Images.xcassets in Resources */,
 				D39A51E31AB116CD00476901 /* pipe2.png in Resources */,
-				D39A51DB1AB116C100476901 /* game4bg.jpg in Resources */,
 				D39A51D81AB116C100476901 /* button2.png in Resources */,
 				D39A51DD1AB116C100476901 /* game5_bg2.png in Resources */,
 				D39A51AD1AB1164200476901 /* GameScene.sks in Resources */,
