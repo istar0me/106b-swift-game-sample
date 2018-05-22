@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D31EE19E1AA4F49400D2E8B9 /* icon1.png in Resources */ = {isa = PBXBuildFile; fileRef = D31EE19B1AA4F49400D2E8B9 /* icon1.png */; };
+		D31EE19F1AA4F49400D2E8B9 /* icon2.png in Resources */ = {isa = PBXBuildFile; fileRef = D31EE19C1AA4F49400D2E8B9 /* icon2.png */; };
+		D31EE1A01AA4F49400D2E8B9 /* icon3.png in Resources */ = {isa = PBXBuildFile; fileRef = D31EE19D1AA4F49400D2E8B9 /* icon3.png */; };
 		D32FAD4F1A9E91D300C0B96E /* beep.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D32FAD4C1A9E91D300C0B96E /* beep.mp3 */; };
 		D32FAD501A9E91D300C0B96E /* click.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D32FAD4D1A9E91D300C0B96E /* click.mp3 */; };
 		D32FAD511A9E91D300C0B96E /* song.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D32FAD4E1A9E91D300C0B96E /* song.mp3 */; };
@@ -59,6 +62,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D31EE19B1AA4F49400D2E8B9 /* icon1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon1.png; sourceTree = "<group>"; };
+		D31EE19C1AA4F49400D2E8B9 /* icon2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon2.png; sourceTree = "<group>"; };
+		D31EE19D1AA4F49400D2E8B9 /* icon3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon3.png; sourceTree = "<group>"; };
 		D32FAD4C1A9E91D300C0B96E /* beep.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = beep.mp3; sourceTree = "<group>"; };
 		D32FAD4D1A9E91D300C0B96E /* click.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = click.mp3; sourceTree = "<group>"; };
 		D32FAD4E1A9E91D300C0B96E /* song.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = song.mp3; sourceTree = "<group>"; };
@@ -124,6 +130,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D31EE19A1AA4F47F00D2E8B9 /* icon */ = {
+			isa = PBXGroup;
+			children = (
+				D31EE19B1AA4F49400D2E8B9 /* icon1.png */,
+				D31EE19C1AA4F49400D2E8B9 /* icon2.png */,
+				D31EE19D1AA4F49400D2E8B9 /* icon3.png */,
+			);
+			name = icon;
+			sourceTree = "<group>";
+		};
 		D32FAD4B1A9E91C500C0B96E /* music */ = {
 			isa = PBXGroup;
 			children = (
@@ -181,6 +197,7 @@
 		D3DA98B01A8C2F4F006F6C06 /* MyGame */ = {
 			isa = PBXGroup;
 			children = (
+				D31EE19A1AA4F47F00D2E8B9 /* icon */,
 				D32FAD4B1A9E91C500C0B96E /* music */,
 				D3DA9ED11A9D08B800526D5F /* MyWord */,
 				D3DA9ED01A9D086200526D5F /* MyScore */,
@@ -344,10 +361,12 @@
 				D3DA98C21A8C2F4F006F6C06 /* LaunchScreen.xib in Resources */,
 				D3DA9ED31A9D096500526D5F /* bear1.png in Resources */,
 				D39F116B1A8E78370046B7E0 /* act1.png in Resources */,
+				D31EE19E1AA4F49400D2E8B9 /* icon1.png in Resources */,
 				D36948AE1A9D187F0075DFD1 /* Scorebutton1.png in Resources */,
 				D3A80B981A9C0260004C541E /* card2.png in Resources */,
 				D36948A51A9D0ABC0075DFD1 /* Game3bear2.png in Resources */,
 				D369489F1A9D0A6E0075DFD1 /* star.png in Resources */,
+				D31EE19F1AA4F49400D2E8B9 /* icon2.png in Resources */,
 				D39F11691A8E78310046B7E0 /* effect.png in Resources */,
 				D36948AF1A9D187F0075DFD1 /* Scorebutton2.png in Resources */,
 				D369489B1A9D0A6E0075DFD1 /* cloud.png in Resources */,
@@ -358,6 +377,7 @@
 				D3DA98BD1A8C2F4F006F6C06 /* Main.storyboard in Resources */,
 				D36948A41A9D0ABC0075DFD1 /* Game3bear1.png in Resources */,
 				D32FAD4F1A9E91D300C0B96E /* beep.mp3 in Resources */,
+				D31EE1A01AA4F49400D2E8B9 /* icon3.png in Resources */,
 				D32FAD501A9E91D300C0B96E /* click.mp3 in Resources */,
 				D361D1CD1A8D4F3A00B1445A /* button1.png in Resources */,
 				D361D1CE1A8D4F3A00B1445A /* button2.png in Resources */,
