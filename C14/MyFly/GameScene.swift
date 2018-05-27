@@ -38,7 +38,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         self.addChild(myScore)
         
         
-        // 3.背景（藍天）
+        // 3.背景（藍天、綠洲）
+        FunSet_BKGound("game5_bg2.png",position: 0,speed:20) // 沙洲移動
         FunSet_BKGound("game5_bg1.jpg",position: -1.0,speed:30) // 雲朵移動
         FunSet_Fly()
         FunSet_Gound()
