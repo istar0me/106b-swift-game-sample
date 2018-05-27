@@ -7,6 +7,7 @@
 //
 import SpriteKit
 class GameScene: SKScene, SKPhysicsContactDelegate {
+    let myLabel = SKLabelNode(fontNamed:"Chalkduster")
     let myScore = SKLabelNode(fontNamed:"AmericanTypewriter-Bold")
     var fly:SKSpriteNode = SKSpriteNode()
     var gound:SKSpriteNode = SKSpriteNode()
@@ -22,10 +23,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     override func didMove(to view: SKView) {
         /* 設定遊戲的場景 */
         // 1. 版權宣告標籤
-        let myLabel = SKLabelNode(fontNamed:"Chalkduster")
-        myLabel.text = "copyright 2015 PowenKo.com, All Rights Reserved.";
-        myLabel.fontSize = 32;
-        myLabel.position = CGPoint(x:self.frame.midX,y: 100);
+        myLabel.text = "";
+        myLabel.zPosition=10
+        myLabel.fontSize = 64;
+        myLabel.position = CGPoint(x:self.frame.midX,y: self.frame.midY);
         self.addChild(myLabel)
         
         
@@ -48,7 +49,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         
         // 4. 水管
-        for i in stride(from: 0, to: 100, by: 1) {
+        for i in stride(from: 0, to: 10, by: 1) {
             let opensize:CGFloat = CGFloat(arc4random_uniform(UInt32(200+1)))+50
             let t_positionx:CGFloat = CGFloat(i*400)+CGFloat( arc4random_uniform(UInt32(300+1))+100)
             FunSet_Pipe(3.0,speed:60,open: opensize,positionx:t_positionx)
@@ -184,5 +185,16 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.fly.physicsBody?.velocity = CGVector(dx: 0, dy: 0)
         self.fly.physicsBody?.applyImpulse(CGVector(dx: 0, dy: 100))
+    }
+    
+    func didBegin(_ contact: SKPhysicsContact){
+        self.backgroundColor =  SKColor.red
+        myLabel.text = "Game Over";
+        bg1.isHidden=true
+        bg2.isHidden=true
+        self.backgroundColor=SKColor.red
+    }
+    
+    func didEnd(_ contact: SKPhysicsContact){
     }
 }
