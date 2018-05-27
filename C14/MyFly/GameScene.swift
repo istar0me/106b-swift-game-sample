@@ -13,6 +13,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var gound:SKSpriteNode = SKSpriteNode()
     var bg1:SKSpriteNode = SKSpriteNode()
     var bg2:SKSpriteNode = SKSpriteNode()
+    var move:Bool=true
     
     // 指定物件的種類
     let flyCat:UInt32 = 1 << 0      //1 設定為主角的種類
@@ -49,7 +50,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         
         // 4. 水管
-        for i in stride(from: 0, to: 10, by: 1) {
+        for i in stride(from: 0, to: 100, by: 1) {
             let opensize:CGFloat = CGFloat(arc4random_uniform(UInt32(200+1)))+50
             let t_positionx:CGFloat = CGFloat(i*400)+CGFloat( arc4random_uniform(UInt32(300+1))+100)
             FunSet_Pipe(3.0,speed:60,open: opensize,positionx:t_positionx)
@@ -183,8 +184,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.fly.physicsBody?.velocity = CGVector(dx: 0, dy: 0)
-        self.fly.physicsBody?.applyImpulse(CGVector(dx: 0, dy: 100))
+        if(move==true){
+            self.fly.physicsBody?.velocity = CGVector(dx: 0, dy: 0)
+            self.fly.physicsBody?.applyImpulse(CGVector(dx: 0, dy: 100))
+        }
     }
     
     func didBegin(_ contact: SKPhysicsContact){
@@ -193,6 +196,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         bg1.isHidden=true
         bg2.isHidden=true
         self.backgroundColor=SKColor.red
+        move=false
     }
     
     func didEnd(_ contact: SKPhysicsContact){
