@@ -10,6 +10,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     let myScore = SKLabelNode(fontNamed:"AmericanTypewriter-Bold")
     var fly:SKSpriteNode = SKSpriteNode()
     var gound:SKSpriteNode = SKSpriteNode()
+    var bg1:SKSpriteNode = SKSpriteNode()
+    var bg2:SKSpriteNode = SKSpriteNode()
+    
     // 指定物件的種類
     let flyCat:UInt32 = 1 << 0      //1 設定為主角的種類
     let pipeCat:UInt32 = 1 << 1     //2 設定為水管的種類
@@ -35,13 +38,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         self.addChild(myScore)
         
         
-        // 3. 背景（藍天）
-        let bgImage = SKSpriteNode(imageNamed: "game5_bg1.jpg")
-        bgImage.zPosition = -1
-        bgImage.position = CGPoint(x:self.frame.midX, y:self.frame.midY);
-        self.addChild(bgImage)
-        
-        
+        // 3.背景（藍天）
+        FunSet_BKGound("game5_bg1.jpg",position: -1.0,speed:30) // 雲朵移動
         FunSet_Fly()
         FunSet_Gound()
         self.physicsWorld.gravity = CGVector(dx: 0.0,dy: -5.0) // 地心引力的強度（在此為向下 5）
@@ -112,6 +110,37 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let ani4b=SKAction.repeatForever(ani3b)
         gound2.run(ani4b)
     }
+    
+    // 設定雲和沙洲移動的函數
+    func FunSet_BKGound(_ filename:String,position:CGFloat,speed:TimeInterval){
+        let gound1 = SKTexture(imageNamed:filename) // 指定圖片
+        /* 雲朵/沙洲A */
+        bg1 = SKSpriteNode(texture: gound1) //
+        bg1.zPosition = position // 指定高度
+        bg1.position = CGPoint(x:self.frame.midX, y:self.frame.midY); // 指定位置
+        self.addChild(bg1)
+        
+        // 雲朵/沙洲A移動動畫
+        let ani1 = SKAction.move(to: CGPoint(x: -bg1.size.width/2, y: self.frame.midY  ), duration: speed)
+        let ani2 = SKAction.move(to: bg1.position, duration: 0)
+        let ani3 = SKAction.sequence([ani1,ani2])
+        let ani4=SKAction.repeatForever(ani3)
+        bg1.run(ani4)
+        
+        /* 雲朵/沙洲B */
+        bg2 = SKSpriteNode(texture: gound1) //
+        bg2.zPosition = position // 指定高度
+        bg2.position = CGPoint(x:self.frame.midX+bg2.size.width , y:self.frame.midY ); // 指定位置
+        self.addChild(bg2)
+        
+        // 雲朵/沙洲B移動動畫
+        let ani1b = SKAction.move(to: CGPoint(x: self.frame.midX, y: self.frame.midY ), duration: speed)
+        let ani2b = SKAction.move(to: bg2.position, duration: 0)
+        let ani3b = SKAction.sequence([ani1b,ani2b])
+        let ani4b=SKAction.repeatForever(ani3b)
+        bg2.run(ani4b)
+    }
+    
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.fly.physicsBody?.velocity = CGVector(dx: 0, dy: 0)
