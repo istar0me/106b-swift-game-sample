@@ -48,9 +48,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         
         // 4. 水管
-        let t_positionx:CGFloat=100
-        let opensize:CGFloat=50.0
-        FunSet_Pipe(3.0, speed:60, open: opensize, positionx:t_positionx)
+        for i in stride(from: 0, to: 100, by: 1) {
+            let opensize:CGFloat = CGFloat(arc4random_uniform(UInt32(200+1)))+50
+            let t_positionx:CGFloat = CGFloat(i*400)+CGFloat( arc4random_uniform(UInt32(300+1))+100)
+            FunSet_Pipe(3.0,speed:60,open: opensize,positionx:t_positionx)
+        }
     }
     
     override func update(_ currentTime: TimeInterval) {
