@@ -45,6 +45,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         FunSet_Gound()
         self.physicsWorld.gravity = CGVector(dx: 0.0,dy: -5.0) // 地心引力的強度（在此為向下 5）
         self.physicsWorld.contactDelegate = self // 物理反應的觸發類別，在此為自己（GameScene 類別）
+        
+        
+        // 4. 水管
+        let t_positionx:CGFloat=100
+        let opensize:CGFloat=50.0
+        FunSet_Pipe(3.0, speed:60, open: opensize, positionx:t_positionx)
     }
     
     override func update(_ currentTime: TimeInterval) {
@@ -142,6 +148,36 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         bg2.run(ani4b)
     }
     
+    // 處理水管的函數
+    func FunSet_Pipe(_ position:CGFloat, speed:TimeInterval, open:CGFloat, positionx:CGFloat) {
+        /* 下方水管 */
+        let pipe2 = SKSpriteNode(imageNamed: "pipe2.png") // 下方水管圖片
+        pipe2.zPosition = 2 // 指定高度
+        pipe2.position = CGPoint(x:self.frame.midX+positionx, y:self.frame.midY-(pipe2.size.height/2)-open ); // 指定位置
+        self.addChild(pipe2)
+        
+        // 物理效果
+        pipe2.physicsBody=SKPhysicsBody(rectangleOf: pipe2.size) // 設定物理大小為實際圖片的大小
+        pipe2.physicsBody?.isDynamic=false // 設定動態物理計算，代表此物件會受到物理反應改變為自動改變位置（在此不設定）
+        pipe2.physicsBody?.categoryBitMask = pipeCat // 設定物件的種類為 pipeCat
+        
+        /* 上方水管 */
+        let pipe1 = SKSpriteNode(imageNamed: "pipe1.png") // 上方水管圖片
+        pipe1.zPosition = 2 // 指定高度
+        pipe1.position = CGPoint(x:self.frame.midX+positionx, y:self.frame.midY+(pipe1.size.height/2)+open ); // 指定位置
+        self.addChild(pipe1)
+        
+        // 物理效果
+        pipe1.physicsBody=SKPhysicsBody(rectangleOf: pipe1.size) // 設定物理大小為實際圖片的大小
+        pipe1.physicsBody?.isDynamic=false // 設定動態物理計算，代表此物件會受到物理反應改變為自動改變位置（在此不設定）
+        pipe1.physicsBody?.categoryBitMask = pipeCat // 設定物件的種類為 pipeCat
+        
+        // 動畫效果
+        let ani1b = SKAction.moveBy(x: -1, y:0, duration:1/speed)
+        let ani3b = SKAction.repeatForever(ani1b)
+        pipe1.run(ani3b)
+        pipe2.run(ani3b)
+    }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.fly.physicsBody?.velocity = CGVector(dx: 0, dy: 0)
