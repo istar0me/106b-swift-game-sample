@@ -38,7 +38,7 @@ class SpaceNode: SKSpriteNode{
         var newPosition = position
         if Steps.count>0 {
             let targetPoint = Steps[0]
-            // 透過三角函數，計算現在位置和目標位置的距離
+            // 透過畢氏定理，計算現在位置和目標位置的距離
             let offset = CGPoint(x: targetPoint.x - currentPosition.x, y: targetPoint.y - currentPosition.y) // 分別計算 x, y 軸的位移
             let length = Double(sqrtf(Float(offset.x * offset.x) + Float(offset.y * offset.y))) // Sqrt(x^2+y^2)
             let direction = CGPoint(x:CGFloat(offset.x) / CGFloat(length), y: CGFloat(offset.y) / CGFloat(length))
@@ -51,5 +51,22 @@ class SpaceNode: SKSpriteNode{
                 Steps.remove(at: 0) // 移除矩陣資料
             }
         }
+    }
+    
+    func GetPath() -> CGPath?{ // 回傳 CGPathRef 資料型態
+        let ref = CGMutablePath() // 初始化
+        if self.Steps.count>1 {
+            for i in stride(from:0, to: self.Steps.count, by:1) {
+                let point=self.Steps[i]
+                if (i==0) {
+                    ref.move(to: CGPoint(x: point.x, y: point.y)) // 起點
+                } else {
+                    ref.addLine(to: CGPoint(x: point.x, y: point.y)) // 每一點的位置
+                }
+            }
+        } else {
+            return nil
+        }
+        return ref
     }
 }

@@ -59,25 +59,21 @@ class GameScene: SKScene {
     
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        if let touch = touches.first {
-            let location: CGPoint = touch.location(in: self)
-            let node = atPoint(location)       // 判斷是否點擊到飛碟
-            if node.name == "space"{
-                let space = node as! SpaceNode // 資料轉換
-                space.arrayClear()             // 清除矩陣
-                space.arrayAdd(location)       // 把資料放入陣列中
-                m_CurrentSpace=space           // 記錄現在的飛碟
-            }
+        let location: CGPoint = touches.first!.location(in: self)
+        let node = atPoint(location)
+        if node.name == "space"{
+            let space = node as! SpaceNode
+            space.arrayClear()
+            space.arrayAdd(location)
+            m_CurrentSpace=space
         }
     }
     
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        if let touch = touches.first {
-            let location: CGPoint = touch.location(in: self)
-            if let node = m_CurrentSpace {
-                node.arrayAdd(location) // 把資料放入陣列中
-            }
+        let location: CGPoint = touches.first!.location(in: self)
+        if let node = m_CurrentSpace {
+            node.arrayAdd(location)
         }
     }
     
@@ -94,6 +90,22 @@ class GameScene: SKScene {
         enumerateChildNodes(withName: "space", using: {node, stop in
             let space = node as! SpaceNode // 轉換類別
             space.move(self.timer)         // 將時間差帶入函數
+        })
+        funLine()
+    }
+    
+    
+    // 畫線
+    func funLine(){
+        enumerateChildNodes(withName: "space", using: {node, stop in
+            let space = node as! SpaceNode      // 轉換類別
+            let shapeNode = SKShapeNode()
+            shapeNode.path = space.GetPath()    // 呼叫 SKShapeNode 中的 GetPath 函數，取得玩家所畫的線的位置
+            shapeNode.name = "line"             // 將這條線取名為 line
+            shapeNode.strokeColor = UIColor.red // 設定為紅線
+            shapeNode.lineWidth = 2             // 設定線的粗細
+            shapeNode.zPosition = 10
+            self.addChild(shapeNode)
         })
     }
 }
