@@ -13,6 +13,7 @@ class GameScene: SKScene {
     let myLabel = SKLabelNode(fontNamed:"Chalkduster")
     let myScore = SKLabelNode(fontNamed:"Chalkduster")
     var fly:SKSpriteNode = SKSpriteNode()
+    var timer: TimeInterval = 0.0
     override func didMove(to view: SKView) {
         // 1.Game Over 標籤
         myLabel.text = "";
@@ -73,11 +74,8 @@ class GameScene: SKScene {
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         if let touch = touches.first {
             let location: CGPoint = touch.location(in: self)
-            let node = atPoint(location)
-            if node.name == "space"{
-                let space = node as! SpaceNode
-                space.arrayAdd(location) // 把資料放入陣列中
-                m_CurrentSpace=space
+            if let node = m_CurrentSpace {
+                node.arrayAdd(location) // 把資料放入陣列中
             }
         }
     }
@@ -88,7 +86,11 @@ class GameScene: SKScene {
     }
     
     
+    // 畫面更新的觸發事件
     override func update(_ currentTime: TimeInterval) {
-        /* Called before each frame is rendered */
+        enumerateChildNodes(withName: "space", using: {node, stop in
+            let space = node as! SpaceNode // 轉換類別
+            space.move(self.timer)         // 呼叫 SpaceNode 的 move 函數
+        })
     }
 }

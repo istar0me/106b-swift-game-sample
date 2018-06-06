@@ -30,4 +30,13 @@ class SpaceNode: SKSpriteNode{
         Steps.append(step)
         print(step.x)
     }
+    
+    // 移動飛碟
+    func move(_ timer:TimeInterval){
+        if Steps.count>0 {
+            let newPosition=Steps[0]
+            position = newPosition
+            Steps.remove(at: 0)
+        }
+    }
 }
