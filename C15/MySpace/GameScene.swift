@@ -52,9 +52,12 @@ class GameScene: SKScene {
     // 顯示飛碟
     func FunSet_space(){
         let space = SpaceNode(imageNamed:"space1.png")
-        space.position = CGPoint(x: 20, y: Int(arc4random_uniform(300)))
+        space.position = CGPoint(x: 30, y: Int(arc4random_uniform(300))+30)
         space.name = "space"
         self.addChild(space)
+        let ani1=SKAction.run({self.FunSet_space()}) // 呼叫產生飛碟的函數
+        let ani2=SKAction.sequence([SKAction.wait(forDuration: 10), ani1]) // 每 10 秒產生連續的動作
+        run(ani2)
     }
     
     
