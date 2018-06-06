@@ -9,6 +9,7 @@
 import SpriteKit
 
 class GameScene: SKScene {
+    var m_CurrentSpace:SpaceNode?
     let myLabel = SKLabelNode(fontNamed:"Chalkduster")
     let myScore = SKLabelNode(fontNamed:"Chalkduster")
     var fly:SKSpriteNode = SKSpriteNode()
@@ -56,7 +57,36 @@ class GameScene: SKScene {
     
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if let touch = touches.first {
+            let location: CGPoint = touch.location(in: self)
+            let node = atPoint(location)       // 判斷是否點擊到飛碟
+            if node.name == "space"{
+                let space = node as! SpaceNode // 資料轉換
+                space.arrayClear()             // 清除矩陣
+                space.arrayAdd(location)       // 把資料放入陣列中
+                m_CurrentSpace=space           // 記錄現在的飛碟
+            }
+        }
     }
+    
+    
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if let touch = touches.first {
+            let location: CGPoint = touch.location(in: self)
+            let node = atPoint(location)
+            if node.name == "space"{
+                let space = node as! SpaceNode
+                space.arrayAdd(location) // 把資料放入陣列中
+                m_CurrentSpace=space
+            }
+        }
+    }
+    
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        m_CurrentSpace=nil
+    }
+    
     
     override func update(_ currentTime: TimeInterval) {
         /* Called before each frame is rendered */
