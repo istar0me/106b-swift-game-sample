@@ -25,7 +25,6 @@ class GameScene: SKScene {
         myScore.text = "30";
         myScore.fontSize = 50;
         myScore.fontColor=UIColor(red: 1/255, green: 1/255,blue: 1/255, alpha: 150/255)
-        
         myScore.position = CGPoint(x:30,y: Int(self.size.height)-160);
         self.addChild(myScore)
         
@@ -36,22 +35,23 @@ class GameScene: SKScene {
         bg.position = CGPoint(x:self.frame.midX, y:self.frame.midY);
         self.addChild(bg)
         
-        FunSet_Fly()
+        
+        // 4.停機坪
+        let parking = SKSpriteNode(imageNamed: "parking.png")
+        parking.zPosition = 0
+        parking.position = CGPoint(x:self.frame.width-parking.size.width, y:100.0);
+        self.addChild(parking)
+        
+        FunSet_space()
     }
     
     
     // 顯示飛碟
-    func FunSet_Fly(){
-        let fly1 = SKTexture(imageNamed: "space1.png")
-        let fly2 = SKTexture(imageNamed: "space2.png")
-        let ani1 = SKAction.animate(
-            with: [fly1,fly2],timePerFrame:0.25)
-        let ani2=SKAction.repeatForever(ani1)
-        fly = SKSpriteNode(texture: fly1)
-        fly.run(ani2)
-        fly.zPosition = 2
-        fly.position = CGPoint(x:self.frame.midX, y:self.frame.midY);
-        self.addChild(fly)
+    func FunSet_space(){
+        let space = SpaceNode(imageNamed:"space1.png")
+        space.position = CGPoint(x: 20, y: Int(arc4random_uniform(300)))
+        space.name = "space"
+        self.addChild(space)
     }
     
     

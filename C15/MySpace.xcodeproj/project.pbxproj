@@ -20,6 +20,7 @@
 		D39361EF1AB25B5500166ADF /* space1.png in Resources */ = {isa = PBXBuildFile; fileRef = D39361ED1AB25B5500166ADF /* space1.png */; };
 		D39361F01AB25B5500166ADF /* space2.png in Resources */ = {isa = PBXBuildFile; fileRef = D39361EE1AB25B5500166ADF /* space2.png */; };
 		D39361F21AB25B5B00166ADF /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = D39361F11AB25B5B00166ADF /* star.png */; };
+		D39361F41AB25FA000166ADF /* SpaceNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39361F31AB25FA000166ADF /* SpaceNode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		D39361ED1AB25B5500166ADF /* space1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = space1.png; sourceTree = "<group>"; };
 		D39361EE1AB25B5500166ADF /* space2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = space2.png; sourceTree = "<group>"; };
 		D39361F11AB25B5B00166ADF /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star.png; sourceTree = "<group>"; };
+		D39361F31AB25FA000166ADF /* SpaceNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpaceNode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,8 +96,9 @@
 				D39361E81AB25A5100166ADF /* pic */,
 				D39361C41AB25A4200166ADF /* AppDelegate.swift */,
 				D39361C61AB25A4200166ADF /* GameScene.sks */,
-				D39361C81AB25A4200166ADF /* GameScene.swift */,
 				D39361CA1AB25A4200166ADF /* GameViewController.swift */,
+				D39361C81AB25A4200166ADF /* GameScene.swift */,
+				D39361F31AB25FA000166ADF /* SpaceNode.swift */,
 				D39361CC1AB25A4200166ADF /* Main.storyboard */,
 				D39361CF1AB25A4200166ADF /* Images.xcassets */,
 				D39361D11AB25A4200166ADF /* LaunchScreen.xib */,
@@ -186,7 +189,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0700;
-				LastUpgradeCheck = 0930;
+				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = "Powen Ko";
 				TargetAttributes = {
 					D39361BE1AB25A4200166ADF = {
@@ -250,6 +253,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D39361F41AB25FA000166ADF /* SpaceNode.swift in Sources */,
 				D39361C91AB25A4200166ADF /* GameScene.swift in Sources */,
 				D39361CB1AB25A4200166ADF /* GameViewController.swift in Sources */,
 				D39361C51AB25A4200166ADF /* AppDelegate.swift in Sources */,
