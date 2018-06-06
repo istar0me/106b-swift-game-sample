@@ -28,7 +28,7 @@ class SpaceNode: SKSpriteNode{
     // 加上一筆陣列資料
     func arrayAdd(_ step:CGPoint){
         Steps.append(step)
-       // print(step.x)
+        // print(step.x)
     }
     
     let POINTS_PER_SEC: CGFloat = 80.0 // 設定每秒移動的點(Dot)數
@@ -68,5 +68,13 @@ class SpaceNode: SKSpriteNode{
             return nil
         }
         return ref
+    }
+    
+    func initFly() {
+        let width = scene!.frame.width
+        let height = scene!.frame.height
+        let target = CGPoint(x:Int(arc4random_uniform(UInt32(width))),y:Int(arc4random_uniform(UInt32(height)))) // 透過亂數產生終點
+        self.arrayAdd(target) // 在陣列中加入終點的位置
+        self.arrayAdd(target) // 在陣列中再加入鐘點的位置
     }
 }

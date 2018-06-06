@@ -71,6 +71,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             space.physicsBody!.contactTestBitMask = SpaceCat |  ParkingCat // 指定會發生碰撞的物件（飛碟或停機坪）
             space.physicsBody!.collisionBitMask = 0
             
+            space.initFly() // 呼叫自動移動的函數
             let ani1=SKAction.run({self.FunSet_space()}) // 呼叫產生飛碟的函數
             let ani2=SKAction.sequence([SKAction.wait(forDuration: 10), ani1]) // 每 10 秒產生連續的動作
             run(ani2)
