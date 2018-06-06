@@ -8,14 +8,19 @@
 
 import SpriteKit
 
-class GameScene: SKScene {
+class GameScene: SKScene, SKPhysicsContactDelegate {
     var m_CurrentSpace:SpaceNode?
     let myLabel = SKLabelNode(fontNamed:"Chalkduster")
     let myScore = SKLabelNode(fontNamed:"Chalkduster")
+    var Score:Int=0
     var fly:SKSpriteNode = SKSpriteNode()
     var timer: TimeInterval = 0.0
     var lastUpdateTime: TimeInterval = 0.0 // 紀錄上次的時間
+    let SpaceCat:UInt32 = 1 << 0 // 設定飛碟為 1
+    let ParkingCat:UInt32 = 1 << 1 // 設定停機坪為 2
     override func didMove(to view: SKView) {
+        physicsWorld.gravity = CGVector(dx: 0.0, dy: 0.0) // 設定地心引力為 0 （即沒有地心引力）
+        physicsWorld.contactDelegate = self // 物理碰撞反應
         // 1.Game Over 標籤
         myLabel.text = "";
         myLabel.fontSize = 65;
@@ -25,7 +30,7 @@ class GameScene: SKScene {
         
         // 2.分數標籤
         myScore.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
-        myScore.text = "30";
+        myScore.text = "\(self.Score)"; // 顯示實際的分數
         myScore.fontSize = 50;
         myScore.fontColor=UIColor(red: 1/255, green: 1/255,blue: 1/255, alpha: 150/255)
         myScore.position = CGPoint(x:30,y: Int(self.size.height)-160);
@@ -44,6 +49,10 @@ class GameScene: SKScene {
         parking.zPosition = 0
         parking.position = CGPoint(x:self.frame.width-parking.size.width, y:100.0);
         self.addChild(parking)
+        parking.physicsBody = SKPhysicsBody(circleOfRadius: parking.size.width / 2.0) // 碰撞大小
+        parking.physicsBody!.categoryBitMask = ParkingCat // 設定物件的碰撞遮罩（停機坪）
+        parking.physicsBody!.contactTestBitMask = SpaceCat // 指定會發生碰撞的物件（飛碟）
+        parking.physicsBody!.collisionBitMask = 0
         
         FunSet_space()
     }
@@ -55,6 +64,11 @@ class GameScene: SKScene {
         space.position = CGPoint(x: 30, y: Int(arc4random_uniform(300))+30)
         space.name = "space"
         self.addChild(space)
+        space.physicsBody = SKPhysicsBody(circleOfRadius: space.size.width / 2.0) // 碰撞大小
+        space.physicsBody!.categoryBitMask = SpaceCat // 設定物件的碰撞遮罩（飛碟）
+        space.physicsBody!.contactTestBitMask = SpaceCat | ParkingCat // 指定會發生碰撞的物件（飛碟或停機坪）
+        space.physicsBody!.collisionBitMask = 0
+        
         let ani1=SKAction.run({self.FunSet_space()}) // 呼叫產生飛碟的函數
         let ani2=SKAction.sequence([SKAction.wait(forDuration: 10), ani1]) // 每 10 秒產生連續的動作
         run(ani2)
@@ -116,5 +130,18 @@ class GameScene: SKScene {
             shapeNode.zPosition = 10
             self.addChild(shapeNode)
         })
+    }
+    
+    func didBegin(_ contact: SKPhysicsContact) {
+        let con1=contact.bodyA.node
+        let con2=contact.bodyB.node
+        let collision = con1!.physicsBody!.categoryBitMask | con2!.physicsBody!.categoryBitMask;
+        if collision == SpaceCat { // 是否為飛碟互撞
+            print("space crash")
+            myLabel.text="Game Over" // 顯示 Game Over
+        } else if collision == SpaceCat | ParkingCat { // 是否為飛碟與停機坪互相碰撞（飛碟抵達停機坪）
+            self.Score=self.Score+1 // 加分
+            myScore.text = "\(self.Score)"; // 改變分數
+        }
     }
 }

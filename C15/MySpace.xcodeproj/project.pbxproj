@@ -189,16 +189,16 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0700;
-				LastUpgradeCheck = 0930;
+				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = "Powen Ko";
 				TargetAttributes = {
 					D39361BE1AB25A4200166ADF = {
 						CreatedOnToolsVersion = 6.2;
-						LastSwiftMigration = 0930;
+						LastSwiftMigration = 0940;
 					};
 					D39361D71AB25A4200166ADF = {
 						CreatedOnToolsVersion = 6.2;
-						LastSwiftMigration = 0930;
+						LastSwiftMigration = 0940;
 						TestTargetID = D39361BE1AB25A4200166ADF;
 					};
 				};

@@ -28,7 +28,7 @@ class SpaceNode: SKSpriteNode{
     // 加上一筆陣列資料
     func arrayAdd(_ step:CGPoint){
         Steps.append(step)
-        print(step.x)
+       // print(step.x)
     }
     
     let POINTS_PER_SEC: CGFloat = 80.0 // 設定每秒移動的點(Dot)數
