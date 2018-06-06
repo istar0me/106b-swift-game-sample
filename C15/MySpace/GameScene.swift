@@ -14,6 +14,7 @@ class GameScene: SKScene {
     let myScore = SKLabelNode(fontNamed:"Chalkduster")
     var fly:SKSpriteNode = SKSpriteNode()
     var timer: TimeInterval = 0.0
+    var lastUpdateTime: TimeInterval = 0.0 // 紀錄上次的時間
     override func didMove(to view: SKView) {
         // 1.Game Over 標籤
         myLabel.text = "";
@@ -88,9 +89,11 @@ class GameScene: SKScene {
     
     // 畫面更新的觸發事件
     override func update(_ currentTime: TimeInterval) {
+        self.timer=currentTime - self.lastUpdateTime // 計算時間差
+        self.lastUpdateTime = currentTime // 儲存顯示的時間
         enumerateChildNodes(withName: "space", using: {node, stop in
             let space = node as! SpaceNode // 轉換類別
-            space.move(self.timer)         // 呼叫 SpaceNode 的 move 函數
+            space.move(self.timer)         // 將時間差帶入函數
         })
     }
 }
