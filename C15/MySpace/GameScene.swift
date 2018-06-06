@@ -16,6 +16,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var fly:SKSpriteNode = SKSpriteNode()
     var timer: TimeInterval = 0.0
     var lastUpdateTime: TimeInterval = 0.0 // 紀錄上次的時間
+    var gameStatus=0 // 0 = 繼續執行；1 = 遊戲結束
     let SpaceCat:UInt32 = 1 << 0 // 設定飛碟為 1
     let ParkingCat:UInt32 = 1 << 1 // 設定停機坪為 2
     override func didMove(to view: SKView) {
@@ -60,37 +61,43 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     // 顯示飛碟
     func FunSet_space(){
-        let space = SpaceNode(imageNamed:"space1.png")
-        space.position = CGPoint(x: 30, y: Int(arc4random_uniform(300))+30)
-        space.name = "space"
-        self.addChild(space)
-        space.physicsBody = SKPhysicsBody(circleOfRadius: space.size.width / 2.0) // 碰撞大小
-        space.physicsBody!.categoryBitMask = SpaceCat // 設定物件的碰撞遮罩（飛碟）
-        space.physicsBody!.contactTestBitMask = SpaceCat | ParkingCat // 指定會發生碰撞的物件（飛碟或停機坪）
-        space.physicsBody!.collisionBitMask = 0
-        
-        let ani1=SKAction.run({self.FunSet_space()}) // 呼叫產生飛碟的函數
-        let ani2=SKAction.sequence([SKAction.wait(forDuration: 10), ani1]) // 每 10 秒產生連續的動作
-        run(ani2)
+        if (gameStatus==0) { // 加上遊戲狀態判斷
+            let space = SpaceNode(imageNamed:"space1.png")
+            space.position = CGPoint(x: 30, y: Int(arc4random_uniform(300))+30)
+            space.name = "space"
+            self.addChild(space)
+            space.physicsBody = SKPhysicsBody(circleOfRadius: space.size.width / 2.0) // 碰撞大小
+            space.physicsBody!.categoryBitMask = SpaceCat // 設定物件的碰撞遮罩（飛碟）
+            space.physicsBody!.contactTestBitMask = SpaceCat |  ParkingCat // 指定會發生碰撞的物件（飛碟或停機坪）
+            space.physicsBody!.collisionBitMask = 0
+            
+            let ani1=SKAction.run({self.FunSet_space()}) // 呼叫產生飛碟的函數
+            let ani2=SKAction.sequence([SKAction.wait(forDuration: 10), ani1]) // 每 10 秒產生連續的動作
+            run(ani2)
+        }
     }
     
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        let location: CGPoint = touches.first!.location(in: self)
-        let node = atPoint(location)
-        if node.name == "space"{
-            let space = node as! SpaceNode
-            space.arrayClear()
-            space.arrayAdd(location)
-            m_CurrentSpace=space
+        if (gameStatus==0) { // 加上遊戲狀態判斷
+            let location: CGPoint = touches.first!.location(in: self)
+            let node = atPoint(location)
+            if node.name == "space"{
+                let space = node as! SpaceNode
+                space.arrayClear()
+                space.arrayAdd(location)
+                m_CurrentSpace=space
+            }
         }
     }
     
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        let location: CGPoint = touches.first!.location(in: self)
-        if let node = m_CurrentSpace {
-            node.arrayAdd(location)
+        if (gameStatus==0) { // 加上遊戲狀態判斷
+            let location: CGPoint = touches.first!.location(in: self)
+            if let node = m_CurrentSpace {
+                node.arrayAdd(location)
+            }
         }
     }
     
@@ -102,13 +109,15 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     // 畫面更新的觸發事件
     override func update(_ currentTime: TimeInterval) {
-        self.timer=currentTime - self.lastUpdateTime // 計算時間差
-        self.lastUpdateTime = currentTime // 儲存顯示的時間
-        enumerateChildNodes(withName: "space", using: {node, stop in
-            let space = node as! SpaceNode // 轉換類別
-            space.move(self.timer)         // 將時間差帶入函數
-        })
-        funLine()
+        if (gameStatus==0) { // 加上遊戲狀態判斷
+            self.timer=currentTime - self.lastUpdateTime // 計算時間差
+            self.lastUpdateTime = currentTime // 儲存顯示的時間
+            enumerateChildNodes(withName: "space", using: {node, stop in
+                let space = node as! SpaceNode // 轉換類別
+                space.move(self.timer)         // 將時間差帶入函數
+            })
+            funLine()
+        }
     }
     
     
@@ -139,6 +148,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         if collision == SpaceCat { // 是否為飛碟互撞
             print("space crash")
             myLabel.text="Game Over" // 顯示 Game Over
+            gameStatus = 1 // 改變遊戲狀態
         } else if collision == SpaceCat | ParkingCat { // 是否為飛碟與停機坪互相碰撞（飛碟抵達停機坪）
             self.Score=self.Score+1 // 加分
             myScore.text = "\(self.Score)"; // 改變分數
