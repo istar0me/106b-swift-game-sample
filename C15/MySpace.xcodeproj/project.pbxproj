@@ -14,7 +14,6 @@
 		D39361CE1AB25A4200166ADF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D39361CC1AB25A4200166ADF /* Main.storyboard */; };
 		D39361D01AB25A4200166ADF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D39361CF1AB25A4200166ADF /* Images.xcassets */; };
 		D39361D31AB25A4200166ADF /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D39361D11AB25A4200166ADF /* LaunchScreen.xib */; };
-		D39361DF1AB25A4200166ADF /* MySpaceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39361DE1AB25A4200166ADF /* MySpaceTests.swift */; };
 		D39361EA1AB25B4800166ADF /* game7_bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D39361E91AB25B4800166ADF /* game7_bg.jpg */; };
 		D39361EC1AB25B4E00166ADF /* parking.png in Resources */ = {isa = PBXBuildFile; fileRef = D39361EB1AB25B4E00166ADF /* parking.png */; };
 		D39361EF1AB25B5500166ADF /* space1.png in Resources */ = {isa = PBXBuildFile; fileRef = D39361ED1AB25B5500166ADF /* space1.png */; };
@@ -22,16 +21,6 @@
 		D39361F21AB25B5B00166ADF /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = D39361F11AB25B5B00166ADF /* star.png */; };
 		D39361F41AB25FA000166ADF /* SpaceNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39361F31AB25FA000166ADF /* SpaceNode.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		D39361D91AB25A4200166ADF /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D39361B71AB25A4200166ADF /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = D39361BE1AB25A4200166ADF;
-			remoteInfo = MySpace;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		D39361BF1AB25A4200166ADF /* MySpace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MySpace.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -43,7 +32,6 @@
 		D39361CD1AB25A4200166ADF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D39361CF1AB25A4200166ADF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		D39361D21AB25A4200166ADF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		D39361D81AB25A4200166ADF /* MySpaceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MySpaceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D39361DD1AB25A4200166ADF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D39361DE1AB25A4200166ADF /* MySpaceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySpaceTests.swift; sourceTree = "<group>"; };
 		D39361E91AB25B4800166ADF /* game7_bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = game7_bg.jpg; sourceTree = "<group>"; };
@@ -56,13 +44,6 @@
 
 /* Begin PBXFrameworksBuildPhase section */
 		D39361BC1AB25A4200166ADF /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D39361D51AB25A4200166ADF /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -85,7 +66,6 @@
 			isa = PBXGroup;
 			children = (
 				D39361BF1AB25A4200166ADF /* MySpace.app */,
-				D39361D81AB25A4200166ADF /* MySpaceTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -164,24 +144,6 @@
 			productReference = D39361BF1AB25A4200166ADF /* MySpace.app */;
 			productType = "com.apple.product-type.application";
 		};
-		D39361D71AB25A4200166ADF /* MySpaceTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = D39361E51AB25A4200166ADF /* Build configuration list for PBXNativeTarget "MySpaceTests" */;
-			buildPhases = (
-				D39361D41AB25A4200166ADF /* Sources */,
-				D39361D51AB25A4200166ADF /* Frameworks */,
-				D39361D61AB25A4200166ADF /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				D39361DA1AB25A4200166ADF /* PBXTargetDependency */,
-			);
-			name = MySpaceTests;
-			productName = MySpaceTests;
-			productReference = D39361D81AB25A4200166ADF /* MySpaceTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -195,11 +157,6 @@
 					D39361BE1AB25A4200166ADF = {
 						CreatedOnToolsVersion = 6.2;
 						LastSwiftMigration = 0940;
-					};
-					D39361D71AB25A4200166ADF = {
-						CreatedOnToolsVersion = 6.2;
-						LastSwiftMigration = 0940;
-						TestTargetID = D39361BE1AB25A4200166ADF;
 					};
 				};
 			};
@@ -217,7 +174,6 @@
 			projectRoot = "";
 			targets = (
 				D39361BE1AB25A4200166ADF /* MySpace */,
-				D39361D71AB25A4200166ADF /* MySpaceTests */,
 			);
 		};
 /* End PBXProject section */
@@ -239,13 +195,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D39361D61AB25A4200166ADF /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -260,23 +209,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D39361D41AB25A4200166ADF /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D39361DF1AB25A4200166ADF /* MySpaceTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		D39361DA1AB25A4200166ADF /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = D39361BE1AB25A4200166ADF /* MySpace */;
-			targetProxy = D39361D91AB25A4200166ADF /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		D39361CC1AB25A4200166ADF /* Main.storyboard */ = {
@@ -423,44 +356,6 @@
 			};
 			name = Release;
 		};
-		D39361E61AB25A4200166ADF /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = MySpaceTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.powenko.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MySpace.app/MySpace";
-			};
-			name = Debug;
-		};
-		D39361E71AB25A4200166ADF /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = MySpaceTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.powenko.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MySpace.app/MySpace";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -478,15 +373,6 @@
 			buildConfigurations = (
 				D39361E31AB25A4200166ADF /* Debug */,
 				D39361E41AB25A4200166ADF /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		D39361E51AB25A4200166ADF /* Build configuration list for PBXNativeTarget "MySpaceTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				D39361E61AB25A4200166ADF /* Debug */,
-				D39361E71AB25A4200166ADF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

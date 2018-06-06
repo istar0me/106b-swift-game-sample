@@ -142,6 +142,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         } else if collision == SpaceCat | ParkingCat { // 是否為飛碟與停機坪互相碰撞（飛碟抵達停機坪）
             self.Score=self.Score+1 // 加分
             myScore.text = "\(self.Score)"; // 改變分數
+            if(con1!.physicsBody!.categoryBitMask==SpaceCat){
+                con1?.removeFromParent()
+            }
+            if(con2!.physicsBody!.categoryBitMask==SpaceCat){
+                con2?.removeFromParent()
+            }
         }
     }
 }
