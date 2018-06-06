@@ -1,0 +1,473 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D39361C51AB25A4200166ADF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39361C41AB25A4200166ADF /* AppDelegate.swift */; };
+		D39361C71AB25A4200166ADF /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = D39361C61AB25A4200166ADF /* GameScene.sks */; };
+		D39361C91AB25A4200166ADF /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39361C81AB25A4200166ADF /* GameScene.swift */; };
+		D39361CB1AB25A4200166ADF /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39361CA1AB25A4200166ADF /* GameViewController.swift */; };
+		D39361CE1AB25A4200166ADF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D39361CC1AB25A4200166ADF /* Main.storyboard */; };
+		D39361D01AB25A4200166ADF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D39361CF1AB25A4200166ADF /* Images.xcassets */; };
+		D39361D31AB25A4200166ADF /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D39361D11AB25A4200166ADF /* LaunchScreen.xib */; };
+		D39361DF1AB25A4200166ADF /* MySpaceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39361DE1AB25A4200166ADF /* MySpaceTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D39361D91AB25A4200166ADF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D39361B71AB25A4200166ADF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D39361BE1AB25A4200166ADF;
+			remoteInfo = MySpace;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D39361BF1AB25A4200166ADF /* MySpace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MySpace.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D39361C31AB25A4200166ADF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D39361C41AB25A4200166ADF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D39361C61AB25A4200166ADF /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		D39361C81AB25A4200166ADF /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		D39361CA1AB25A4200166ADF /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		D39361CD1AB25A4200166ADF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D39361CF1AB25A4200166ADF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		D39361D21AB25A4200166ADF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		D39361D81AB25A4200166ADF /* MySpaceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MySpaceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D39361DD1AB25A4200166ADF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D39361DE1AB25A4200166ADF /* MySpaceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySpaceTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D39361BC1AB25A4200166ADF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D39361D51AB25A4200166ADF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D39361B61AB25A4200166ADF = {
+			isa = PBXGroup;
+			children = (
+				D39361C11AB25A4200166ADF /* MySpace */,
+				D39361DB1AB25A4200166ADF /* MySpaceTests */,
+				D39361C01AB25A4200166ADF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D39361C01AB25A4200166ADF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D39361BF1AB25A4200166ADF /* MySpace.app */,
+				D39361D81AB25A4200166ADF /* MySpaceTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D39361C11AB25A4200166ADF /* MySpace */ = {
+			isa = PBXGroup;
+			children = (
+				D39361E81AB25A5100166ADF /* pic */,
+				D39361C41AB25A4200166ADF /* AppDelegate.swift */,
+				D39361C61AB25A4200166ADF /* GameScene.sks */,
+				D39361C81AB25A4200166ADF /* GameScene.swift */,
+				D39361CA1AB25A4200166ADF /* GameViewController.swift */,
+				D39361CC1AB25A4200166ADF /* Main.storyboard */,
+				D39361CF1AB25A4200166ADF /* Images.xcassets */,
+				D39361D11AB25A4200166ADF /* LaunchScreen.xib */,
+				D39361C21AB25A4200166ADF /* Supporting Files */,
+			);
+			path = MySpace;
+			sourceTree = "<group>";
+		};
+		D39361C21AB25A4200166ADF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D39361C31AB25A4200166ADF /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D39361DB1AB25A4200166ADF /* MySpaceTests */ = {
+			isa = PBXGroup;
+			children = (
+				D39361DE1AB25A4200166ADF /* MySpaceTests.swift */,
+				D39361DC1AB25A4200166ADF /* Supporting Files */,
+			);
+			path = MySpaceTests;
+			sourceTree = "<group>";
+		};
+		D39361DC1AB25A4200166ADF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D39361DD1AB25A4200166ADF /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D39361E81AB25A5100166ADF /* pic */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = pic;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D39361BE1AB25A4200166ADF /* MySpace */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D39361E21AB25A4200166ADF /* Build configuration list for PBXNativeTarget "MySpace" */;
+			buildPhases = (
+				D39361BB1AB25A4200166ADF /* Sources */,
+				D39361BC1AB25A4200166ADF /* Frameworks */,
+				D39361BD1AB25A4200166ADF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MySpace;
+			productName = MySpace;
+			productReference = D39361BF1AB25A4200166ADF /* MySpace.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D39361D71AB25A4200166ADF /* MySpaceTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D39361E51AB25A4200166ADF /* Build configuration list for PBXNativeTarget "MySpaceTests" */;
+			buildPhases = (
+				D39361D41AB25A4200166ADF /* Sources */,
+				D39361D51AB25A4200166ADF /* Frameworks */,
+				D39361D61AB25A4200166ADF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D39361DA1AB25A4200166ADF /* PBXTargetDependency */,
+			);
+			name = MySpaceTests;
+			productName = MySpaceTests;
+			productReference = D39361D81AB25A4200166ADF /* MySpaceTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D39361B71AB25A4200166ADF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0930;
+				ORGANIZATIONNAME = "Powen Ko";
+				TargetAttributes = {
+					D39361BE1AB25A4200166ADF = {
+						CreatedOnToolsVersion = 6.2;
+						LastSwiftMigration = 0930;
+					};
+					D39361D71AB25A4200166ADF = {
+						CreatedOnToolsVersion = 6.2;
+						LastSwiftMigration = 0930;
+						TestTargetID = D39361BE1AB25A4200166ADF;
+					};
+				};
+			};
+			buildConfigurationList = D39361BA1AB25A4200166ADF /* Build configuration list for PBXProject "MySpace" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D39361B61AB25A4200166ADF;
+			productRefGroup = D39361C01AB25A4200166ADF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D39361BE1AB25A4200166ADF /* MySpace */,
+				D39361D71AB25A4200166ADF /* MySpaceTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D39361BD1AB25A4200166ADF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D39361D31AB25A4200166ADF /* LaunchScreen.xib in Resources */,
+				D39361D01AB25A4200166ADF /* Images.xcassets in Resources */,
+				D39361C71AB25A4200166ADF /* GameScene.sks in Resources */,
+				D39361CE1AB25A4200166ADF /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D39361D61AB25A4200166ADF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D39361BB1AB25A4200166ADF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D39361C91AB25A4200166ADF /* GameScene.swift in Sources */,
+				D39361CB1AB25A4200166ADF /* GameViewController.swift in Sources */,
+				D39361C51AB25A4200166ADF /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D39361D41AB25A4200166ADF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D39361DF1AB25A4200166ADF /* MySpaceTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D39361DA1AB25A4200166ADF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D39361BE1AB25A4200166ADF /* MySpace */;
+			targetProxy = D39361D91AB25A4200166ADF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D39361CC1AB25A4200166ADF /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D39361CD1AB25A4200166ADF /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D39361D11AB25A4200166ADF /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D39361D21AB25A4200166ADF /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D39361E01AB25A4200166ADF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D39361E11AB25A4200166ADF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D39361E31AB25A4200166ADF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = MySpace/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.powenko.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		D39361E41AB25A4200166ADF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = MySpace/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.powenko.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
+		D39361E61AB25A4200166ADF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = MySpaceTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.powenko.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MySpace.app/MySpace";
+			};
+			name = Debug;
+		};
+		D39361E71AB25A4200166ADF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = MySpaceTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.powenko.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MySpace.app/MySpace";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D39361BA1AB25A4200166ADF /* Build configuration list for PBXProject "MySpace" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D39361E01AB25A4200166ADF /* Debug */,
+				D39361E11AB25A4200166ADF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D39361E21AB25A4200166ADF /* Build configuration list for PBXNativeTarget "MySpace" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D39361E31AB25A4200166ADF /* Debug */,
+				D39361E41AB25A4200166ADF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D39361E51AB25A4200166ADF /* Build configuration list for PBXNativeTarget "MySpaceTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D39361E61AB25A4200166ADF /* Debug */,
+				D39361E71AB25A4200166ADF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D39361B71AB25A4200166ADF /* Project object */;
+}
