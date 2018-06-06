@@ -97,6 +97,12 @@ class GameScene: SKScene {
     
     // 畫線
     func funLine(){
+        // 移除舊的線
+        enumerateChildNodes(withName: "line", using: {node, stop in
+            node.removeFromParent()
+        })
+        
+        // 繪製新的線
         enumerateChildNodes(withName: "space", using: {node, stop in
             let space = node as! SpaceNode      // 轉換類別
             let shapeNode = SKShapeNode()
